@@ -12,7 +12,7 @@ public class Bullet{
     // Sets bullets X-locations to the same as players X-location
     playerBulletX = parent.spaceShipX;
     // Sets bullets Y-locations to the same as players Y-location and moves it up a bit
-    playerBulletY = height-90;
+    playerBulletY = height-93;
   }
   
   void displayBullet(){
