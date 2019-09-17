@@ -14,10 +14,10 @@ public class Player{
   
   void movePlayer(){
     if (player1Left == true){
-    spaceShipX += -10;
+    spaceShipX += -5;
     }
     else if (player1Right == true){
-      spaceShipX += 10;
+      spaceShipX += 5;
     }
     // Stop when both right and left clickd
     /*else if(player1RIGHT == true && player1LEFT == true){
