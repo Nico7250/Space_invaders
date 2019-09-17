@@ -2,8 +2,8 @@ Alien alien;
 Player player;
 
 void setup(){
-  //fullScreen();
-  size(800,800);
+  fullScreen();
+  //size(800,800);
   alien = new Alien();
   player = new Player("spaceShip.png");
 }
@@ -15,5 +15,6 @@ void draw(){
   alien.displayAlien();
   player.displayPlayer();
   player.movePlayer();
+  player.playerConstrain();
   
 }

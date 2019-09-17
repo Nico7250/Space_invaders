@@ -14,15 +14,19 @@ public class Player{
   
   void movePlayer(){
     if (player1Left == true){
-    spaceShipX += -1;
+    spaceShipX += -10;
     }
     else if (player1Right == true){
-      spaceShipX += 1;
+      spaceShipX += 10;
     }
     // Stop when both right and left clickd
     /*else if(player1RIGHT == true && player1LEFT == true){
       spaceShipX = 0;
     }*/
+  }
+  
+  void playerConstrain(){
+   spaceShipX = constrain(spaceShipX,60, width-60); 
   }
   
   void displayPlayer(){
