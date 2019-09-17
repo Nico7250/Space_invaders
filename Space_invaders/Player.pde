@@ -10,8 +10,8 @@ public class Player{
   
   void displayPlayer(){
     imageMode(CENTER);
-    spaceShip.resize(150, 122);
-    image(spaceShip, 200,200);
+    spaceShip.resize(120, 97);
+    image(spaceShip, width/2,height-60);
     
   }
   
