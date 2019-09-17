@@ -14,10 +14,10 @@ public class Player{
   
   void movePlayer(){
     if (player1Left == true){
-    spaceShipX += -10;
+    spaceShipX += -5;
     }
     else if (player1Right == true){
-      spaceShipX += 10;
+      spaceShipX += 5;
     }
     else if (player1Up == true){
       spaceShipY += -5;
