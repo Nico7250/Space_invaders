@@ -25,15 +25,13 @@ void setup(){
 
 
 void draw(){
-  background(54, 57, 63);
+  background(0);
+  for(int i = 0; i<1000; i++){
+  rect(stars[i],stars2[i],stars3[i],stars3[i]);
+}
   alien.displayAlien();
   bullet.displayBullet();
   player.displayPlayer();
   player.movePlayer();
   player.playerConstrain();
-  bullet.displayBullet();
-  
-    for(int i = 0; i<1000; i++){
-  rect(stars[i],stars2[i],stars3[i],stars3[i]);
-}
 }
