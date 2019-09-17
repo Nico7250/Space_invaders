@@ -16,13 +16,13 @@ public class Player{
     if (player1Left == true){
     spaceShipX += -5;
     }
-    else if (player1Right == true){
+    if (player1Right == true){
       spaceShipX += 5;
     }
-    else if (player1Up == true){
+    if (player1Up == true){
       spaceShipY += -5;
     }
-    else if (player1Down == true){
+    if (player1Down == true){
       spaceShipY += 5;
     }
     
