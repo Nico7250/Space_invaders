@@ -2,7 +2,8 @@ Alien alien;
 Player player;
 
 void setup(){
-  fullScreen();
+  //fullScreen();
+  size(800,800);
   alien = new Alien();
   player = new Player();
 }
