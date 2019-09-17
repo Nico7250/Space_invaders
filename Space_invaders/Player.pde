@@ -38,7 +38,7 @@ public class Player{
   
   void playerConstrain(){
    spaceShipX = constrain(spaceShipX,60, width-60);
-   spaceShipY = constrain(spaceShipY,height-140,height-60);
+   spaceShipY = constrain(spaceShipY,height-height/5,height-60);
   }
   
   void displayPlayer(){
