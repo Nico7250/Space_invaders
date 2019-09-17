@@ -4,22 +4,6 @@ boolean player1Right;
 boolean player1Up;
 boolean player1Down;
 
-void keyReleased(){
-  
-  if (keyCode == LEFT){
-  player1Left = false;
-  }
-  if (keyCode == RIGHT){
-    player1Right = false;
-  }
-  if (keyCode == UP){
-    player1Up = false;
-  }
-  if (keyCode == DOWN){
-    player1Down = false;
-  }
-}
-
 void keyPressed() {
  
   if (keyCode == LEFT){
@@ -36,5 +20,21 @@ void keyPressed() {
   }
   if (keyCode == ESC){
   exit();
+  }
+}
+
+void keyReleased(){
+  
+  if (keyCode == LEFT){
+  player1Left = false;
+  }
+  if (keyCode == RIGHT){
+    player1Right = false;
+  }
+  if (keyCode == UP){
+    player1Up = false;
+  }
+  if (keyCode == DOWN){
+    player1Down = false;
   }
 }
