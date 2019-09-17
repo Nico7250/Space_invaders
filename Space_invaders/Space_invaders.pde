@@ -9,6 +9,7 @@ void setup(){
   alien = new Alien();
   player = new Player("spaceShip.png");
   bullet = new Bullet(player);
+  
 }
 
 
@@ -16,8 +17,8 @@ void setup(){
 void draw(){
   background(54, 57, 63);
   alien.displayAlien();
+  bullet.displayBullet();
   player.displayPlayer();
   player.movePlayer();
   player.playerConstrain();
-  bullet.displayBullet();
 }

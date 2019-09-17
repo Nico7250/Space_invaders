@@ -8,9 +8,11 @@ public class Bullet{
   
   Bullet(Player p){
     parent = p;
-    playerBullet = loadImage("PlayerBullet.png"); 
+    playerBullet = loadImage("PlayerBullet.png");
+    // Sets bullets X-locations to the same as players X-location
     playerBulletX = parent.spaceShipX;
-    playerBulletY = parent.spaceShipY - 55;
+    // Sets bullets Y-locations to the same as players Y-location and moves it up a bit
+    playerBulletY = parent.spaceShipY- 35;
   }
   
   void displayBullet(){
