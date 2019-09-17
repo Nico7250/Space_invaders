@@ -1,15 +1,8 @@
-<<<<<<< HEAD
+
 boolean player1Left;
 boolean player1Right;
 boolean player1Up;
 boolean player1Down;
-=======
-//import Player;
-
-boolean player1LEFT;
-boolean player1RIGHT;
->>>>>>> ceaa3ed0d4c2b4d5fe98a062960df84245b701a5
-
 
 void keyReleased(){
   

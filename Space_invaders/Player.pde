@@ -13,12 +13,16 @@ public class Player{
   }
   
   void movePlayer(){
-    if (player1LEFT == true){
+    if (player1Left == true){
     spaceShipX += -1;
     }
-    else if (player1RIGHT == true){
+    else if (player1Right == true){
       spaceShipX += 1;
     }
+    // Stop when both right and left clickd
+    /*else if(player1RIGHT == true && player1LEFT == true){
+      spaceShipX = 0;
+    }*/
   }
   
   void displayPlayer(){
