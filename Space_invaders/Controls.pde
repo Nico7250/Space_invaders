@@ -1,3 +1,5 @@
+//import Player;
+
 boolean player1LEFT;
 boolean player1RIGHT;
 
