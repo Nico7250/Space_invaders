@@ -16,14 +16,19 @@ public class Player{
     if (player1Left == true){
     spaceShipX += -5;
     }
-    else if (player1Right == true){
+    if (player1Right == true){
       spaceShipX += 5;
     }
-    else if (player1Up == true){
+    if (player1Up == true){
       spaceShipY += -5;
     }
-    else if (player1Down == true){
+    if (player1Down == true){
       spaceShipY += 5;
+    }
+    
+    /*else if (player1Up == true && player1Right == true){
+     spaceShipY += -5;
+     spaceShipX += 5;
     }
     // Stop when both right and left clickd
     /*else if(player1RIGHT == true && player1LEFT == true){
