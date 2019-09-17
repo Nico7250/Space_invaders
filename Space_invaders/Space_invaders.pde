@@ -7,6 +7,7 @@ float[] stars2 = new float[1000];
 float[] stars3 = new float [1000];
 
 ArrayList <Alien> aliens;
+ArrayList <Bullet> bullets;
 
 
 void setup(){
@@ -15,8 +16,9 @@ void setup(){
   frameRate(60);
   //alien = new Alien();
   aliens = new ArrayList<Alien>();
+  bullets = new ArrayList<Bullet>();
   player = new Player("spaceShip.png");
-  bullet = new Bullet(player);
+  bullet = new Bullet(player,player.spaceShipX, player.spaceShipY);
   aliens.add(new Alien());
   createFleet();
   
@@ -27,24 +29,6 @@ void setup(){
   }
 }
 
-void createFleet(){
-   // alien = new Alien();
-    float alienWidth = 50;
-    //float avalibleSpaceX = width + alienWidth;
-    float numberAliensX = int(width /(2 * alienWidth));
-    
-    for (int alienNumber = 1; alienNumber < numberAliensX; alienNumber += 1){
-     alien = new Alien();
-     float alienX = alienWidth +2 * alienWidth * alienNumber;
-     alienX = constrain(alienX,60, width-60);
-     alien.alienLocX = alienX;
-     println(alienNumber);
-     aliens.add(alien);
-    }
-  }
-
-
-
 void draw(){
   background(0);
   for(int i = 0; i<1000; i++){
@@ -53,8 +37,15 @@ void draw(){
   for (Alien alien : aliens){
    alien.displayAlien();
   }
+  bullet.shoot();
+  for (Bullet bullet : bullets){
+   bullet.displayBullet();
+   bullet.move();
+   
+  }
+  
   //alien.displayAlien();
-  bullet.displayBullet();
+  //bullet.displayBullet();
   player.displayPlayer();
   player.movePlayer();
   player.playerConstrain();

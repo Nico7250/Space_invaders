@@ -15,16 +15,16 @@ public class Player{
   
   // Moves spaceship on the x and y-axis, also possible to move diagonally
   void movePlayer(){
-    if (player1Left == true){
+    if (player1Left){
     spaceShipX += -5;
     }
-    if (player1Right == true){
+    if (player1Right){
       spaceShipX += 5;
     }
-    if (player1Up == true){
+    if (player1Up){
       spaceShipY += -5;
     }
-    if (player1Down == true){
+    if (player1Down){
       spaceShipY += 5;
     }
   }
