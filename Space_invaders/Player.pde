@@ -2,8 +2,8 @@
 
 public class Player{
   PImage spaceShip;
-  float spaceShipX;
-  float spaceShipY;
+  public float spaceShipX;
+  public float spaceShipY;
   
   Player(String playerImage){
     

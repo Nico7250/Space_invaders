@@ -1,5 +1,6 @@
 Alien alien;
 Player player;
+Bullet bullet;
 
 void setup(){
   fullScreen();
@@ -7,15 +8,16 @@ void setup(){
   frameRate(60);
   alien = new Alien();
   player = new Player("spaceShip.png");
+  bullet = new Bullet(player);
 }
 
 
 
 void draw(){
-  background(0);
+  background(54, 57, 63);
   alien.displayAlien();
   player.displayPlayer();
   player.movePlayer();
   player.playerConstrain();
-  
+  bullet.displayBullet();
 }

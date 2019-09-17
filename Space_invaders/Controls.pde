@@ -3,6 +3,7 @@ boolean player1Left;
 boolean player1Right;
 boolean player1Up;
 boolean player1Down;
+//char space = " ";
 
 void keyPressed() {
  
@@ -21,7 +22,13 @@ void keyPressed() {
   if (keyCode == ESC){
   exit();
   }
+  /*if (key == "g"){
+    
+  }*/
+  
 }
+
+
 
 void keyReleased(){
   
