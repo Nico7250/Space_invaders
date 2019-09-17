@@ -21,9 +21,10 @@ public class Bullet{
   
   void shoot(){
     if (player1Space){
-     Bullet bullet = new Bullet(player, parent.spaceShipX, parent.spaceShipY-35);
-     bullets.add(bullet);
-    }
+      Bullet bullet = new Bullet(player, parent.spaceShipX, parent.spaceShipY-35);
+      bullets.add(bullet);
+     }
+    
   }
   
   void displayBullet(){
