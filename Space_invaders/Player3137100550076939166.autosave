@@ -1,0 +1,36 @@
+
+
+public class Player{
+  PImage spaceShip;
+  float spaceShipX;
+  float spaceShipY;
+  
+  Player(String playerImage){
+    
+    spaceShip = loadImage(playerImage);
+    spaceShipX = width/2;
+    spaceShipY = height - 60;   
+  }
+  
+  void movePlayer(){
+    if (player1LEFT == true){
+    spaceShipX += -1;
+    }
+    else if (player1RIGHT == true){
+      spaceShipX += 1;
+    }
+  }
+  
+  void playerConstrain(){
+   
+  //spaceShipX = constrain(x,0,width-10);
+  spaceShipY = constrain(20,0, width-20);
+  }
+  
+  void displayPlayer(){
+    imageMode(CENTER);
+    spaceShip.resize(120, 97);
+    image(spaceShip, spaceShipX, spaceShipY);  
+  }
+  
+}

@@ -19,6 +19,12 @@ public class Player{
     else if (player1Right == true){
       spaceShipX += 10;
     }
+    else if (player1Up == true){
+      spaceShipY += -5;
+    }
+    else if (player1Down == true){
+      spaceShipY += 5;
+    }
     // Stop when both right and left clickd
     /*else if(player1RIGHT == true && player1LEFT == true){
       spaceShipX = 0;
@@ -26,7 +32,8 @@ public class Player{
   }
   
   void playerConstrain(){
-   spaceShipX = constrain(spaceShipX,60, width-60); 
+   spaceShipX = constrain(spaceShipX,60, width-60);
+   spaceShipY = constrain(spaceShipY,height-140,height-60);
   }
   
   void displayPlayer(){
