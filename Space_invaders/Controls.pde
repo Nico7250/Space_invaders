@@ -8,45 +8,44 @@ boolean player1Space;
 
 // Checks for key pressed and makes boolean variable true
 void keyPressed() {
- 
-  if (keyCode == LEFT){
-  player1Left = true;
+
+  if (keyCode == LEFT) {
+    player1Left = true;
   }
-  if (keyCode == RIGHT){
+  if (keyCode == RIGHT) {
     player1Right = true;
   }
-   if (keyCode == UP){
+  if (keyCode == UP) {
     player1Up = true;
   }
-  if (keyCode == DOWN){
+  if (keyCode == DOWN) {
     player1Down = true;
   }
-  if (keyCode == ESC){
-  exit();
+  if (keyCode == ESC) {
+    exit();
   }
-  if (key == ' '){
+  if (key == ' ') {
     player1Space = true;
     println("space");
   }
-  
 }
 
 // Checks for key pressed and makes boolean variable false
-void keyReleased(){
-  
-  if (keyCode == LEFT){
-  player1Left = false;
+void keyReleased() {
+
+  if (keyCode == LEFT) {
+    player1Left = false;
   }
-  if (keyCode == RIGHT){
+  if (keyCode == RIGHT) {
     player1Right = false;
   }
-  if (keyCode == UP){
+  if (keyCode == UP) {
     player1Up = false;
   }
-  if (keyCode == DOWN){
+  if (keyCode == DOWN) {
     player1Down = false;
   }
-  if (key == ' '){
+  if (key == ' ') {
     player1Space = false;
   }
 }
