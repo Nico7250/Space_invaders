@@ -1,4 +1,5 @@
-
+long timer;
+int wait = 500;
 
 public class Bullet {
   PImage playerBullet;
@@ -16,13 +17,16 @@ public class Bullet {
   }
 
   void move() {
-    playerBulletY -= 5;
+    playerBulletY -= 3;
   }
 
   void shoot() {
     if (player1Space) {
-      Bullet bullet = new Bullet(player, parent.spaceShipX, parent.spaceShipY-35);
-      bullets.add(bullet);
+      if (millis() - timer >= wait) {
+        timer = millis();
+        Bullet bullet = new Bullet(player, parent.spaceShipX, parent.spaceShipY-35);
+        bullets.add(bullet);
+      }
     }
   }
 
