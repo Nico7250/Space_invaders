@@ -21,12 +21,7 @@ void setup() {
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
   aliens.add(new Alien());
   createFleet();
-
-  for (int i=0; i<1000; i++) {
-    stars[i] = (random(0, width));
-    stars2[i] = (random(0, height));
-    stars3[i] = (random(0, 4));
-  }
+  createStars();
 }
 
 void draw() {
@@ -43,8 +38,6 @@ void draw() {
     bullet.move();
   }
 
-  //alien.displayAlien();
-  //bullet.displayBullet();
   player.displayPlayer();
   player.movePlayer();
   player.playerConstrain();

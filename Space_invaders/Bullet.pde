@@ -35,4 +35,8 @@ public class Bullet {
     playerBullet.resize(24, 38);
     image(playerBullet, playerBulletX, playerBulletY);
   }
+  
+  void deleteBullet(){
+    
+  }
 }
