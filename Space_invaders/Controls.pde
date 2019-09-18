@@ -28,6 +28,9 @@ void keyPressed() {
     player1Space = true;
     println("space");
   }
+  if (key == ENTER){
+    stage = 1;
+  }
 }
 
 // Checks for key pressed and makes boolean variable false

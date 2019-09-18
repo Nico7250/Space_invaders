@@ -3,6 +3,8 @@ Player player;
 Bullet bullet;
 import java.util.Iterator;
 
+int stage = 1;
+
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
 float[] stars3 = new float [1000];
@@ -26,10 +28,15 @@ void setup() {
 }
 
 void draw() {
+   if (stage == 0){
+      background(54,57,63);
+      textAlign(CENTER);
+      textSize(36);
+      text("$PACE INVADER$",height/6,width/1);
+   }
+     else if(stage == 1){
   background(0);
-  for (int i = 0; i<1000; i++) {
-    rect(stars[i], stars2[i], stars3[i], stars3[i]);
-  }
+  displayStars();
   for (Alien alien : aliens) {
     alien.displayAlien();
   }
@@ -46,11 +53,7 @@ void draw() {
   textSize(32);
   text(frameRate, 200, 200);
   
-  Iterator<Bullet> shoot = bullets.iterator();
-  while (shoot.hasNext()) {
-    Bullet b = shoot.next();
-    if (b.playerBulletY <=1){
-    shoot.remove();
-    }
-  }
+    bullet.deleteBulletOutOfBound();
+     }
+
 }

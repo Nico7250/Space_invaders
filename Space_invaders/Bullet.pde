@@ -35,6 +35,12 @@ public class Bullet {
   }
 
   void deleteBulletOutOfBound() {
-    
+    Iterator<Bullet> shoot = bullets.iterator();
+  while (shoot.hasNext()) {
+    Bullet b = shoot.next();
+    if (b.playerBulletY <=1){
+    shoot.remove();
+    }
+  }
   }
 }
