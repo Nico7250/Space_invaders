@@ -50,5 +50,5 @@ void draw() {
   player.playerConstrain();
   textAlign(CENTER);
   textSize(32);
-  text(frameRate,200,200);
+  text(frameRate, 200, 200);
 }
