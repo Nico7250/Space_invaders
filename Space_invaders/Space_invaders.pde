@@ -4,11 +4,12 @@ Alien alien;
 Player player;
 Bullet bullet;
 
-int stage = 0;
+int stage = 1;
 
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
 float[] stars3 = new float [1000];
+//Alien[] aliens = new Alien[9];
 
 ArrayList <Alien> aliens;
 ArrayList <Bullet> bullets;
@@ -17,13 +18,14 @@ ArrayList <Bullet> bullets;
 void setup() {
   fullScreen();
   frameRate(60);
+  //size(700,700);
   
   aliens = new ArrayList<Alien>();
   bullets = new ArrayList<Bullet>();
   
   player = new Player("spaceShip.png");
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
-  aliens.add(new Alien());
+  //aliens.add(new Alien());
   createFleet();
   createStars();
 }
@@ -39,14 +41,20 @@ void draw() {
      else if(stage == 1){
   background(0);
   displayStars();
-  for (Alien alien : aliens) {
-    alien.displayAlien();
-  }
+  
   bullet.shoot();
   for (Bullet bullet : bullets) {
     bullet.displayBullet();
     bullet.move();
   }
+  
+ for (Alien alien : aliens) {
+    alien.displayAlien();
+  }
+  /*
+  for (int i = 0; i < aliens.length; i++){
+    aliens[i].displayAlien();
+  }*/
 
   player.displayPlayer();
   player.movePlayer();
