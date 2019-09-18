@@ -10,9 +10,7 @@ public class Bullet {
   Bullet(Player p, float x, float y) {
     parent = p;
     playerBullet = loadImage("PlayerBullet.png");
-    // Sets bullets X-locations to the same as players X-location
     playerBulletX = x ;
-    // Sets bullets Y-locations to the same as players Y-location and moves it up a bit
     playerBulletY = y;
   }
 
@@ -35,8 +33,7 @@ public class Bullet {
     playerBullet.resize(24, 38);
     image(playerBullet, playerBulletX, playerBulletY);
   }
-  
-  void deleteBullet(){
-    
+
+  void deleteBulletOutOfBound() {
   }
 }
