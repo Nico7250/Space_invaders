@@ -10,7 +10,7 @@ public class Player {
 
     spaceShip = loadImage(playerImage);
     spaceShipX = width/2;
-    spaceShipY = height - 60;
+    spaceShipY = height;
   }
 
   // Moves spaceship on the x and y-axis, also possible to move diagonally

@@ -12,11 +12,11 @@ ArrayList <Bullet> bullets;
 
 void setup() {
   fullScreen();
-  //size(800,800);
   frameRate(60);
-  //alien = new Alien();
+  
   aliens = new ArrayList<Alien>();
   bullets = new ArrayList<Bullet>();
+  
   player = new Player("spaceShip.png");
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
   aliens.add(new Alien());

@@ -1,5 +1,5 @@
-long timer;
-int wait = 500;
+long timer; // Used in calculation for bullet delay
+int wait = 500; // The delay between shots
 
 public class Bullet {
   PImage playerBullet;
@@ -18,11 +18,12 @@ public class Bullet {
     playerBulletY -= 3;
   }
 
+  // Adds a bullet to the arraylist bullets
   void shoot() {
     if (player1Space) {
-      if (millis() - timer >= wait) {
+      if (millis() - timer >= wait) { // Calculates delay between shots
         timer = millis();
-        Bullet bullet = new Bullet(player, parent.spaceShipX, parent.spaceShipY-35);
+        Bullet bullet = new Bullet(player, parent.spaceShipX, parent.spaceShipY-35); // Spawns bullet at spaceShip location
         bullets.add(bullet);
       }
     }
