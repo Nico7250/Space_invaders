@@ -33,7 +33,7 @@ void keyPressed() {
   }
 }
 
-// Checks for key pressed and makes boolean variable false
+// Checks for key released and makes boolean variable false
 void keyReleased() {
 
   if (keyCode == LEFT) {

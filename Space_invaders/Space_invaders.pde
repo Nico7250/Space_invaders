@@ -4,7 +4,7 @@ Alien alien;
 Player player;
 Bullet bullet;
 
-int stage = 1;
+int stage = 0;
 
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
@@ -32,10 +32,18 @@ void setup() {
 void draw() {
    if (stage == 0){
       background(54,57,63);
+      displayStars();
       //textFont(zigBlack);
       textAlign(CENTER);
-      textSize(36);
+      textSize(72);
       text("$PACE INVADER$", width/2, height/5);
+      textSize(14);
+      text("Press 'ESC' to exit game.",width/2,height/1.1);
+      text("Press 'ENTER' to start game.",width/2,height/1.12);
+      rectMode(CENTER);
+      rect(width/2,height/3,250,100);
+      rect(width/2,height/1.75,250,100);
+      rect(width/2,height/1.25,250,100);
    }
      else if(stage == 1){
   background(0);
