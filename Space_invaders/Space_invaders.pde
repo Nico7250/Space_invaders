@@ -48,7 +48,7 @@ void draw() {
   player.displayPlayer();
   player.movePlayer();
   player.playerConstrain();
-  //textAlign(CENTER);
-  //textSize(32);
-  //text(frameRate,200,200);
+  textAlign(CENTER);
+  textSize(32);
+  text(frameRate,200,200);
 }
