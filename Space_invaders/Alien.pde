@@ -3,17 +3,35 @@ public class Alien {
   PImage alien;
   float alienLocX;
   float alienLocY;
+  float moveSpeed;
 
   Alien(float x, float y) {
     alien = loadImage("alien.png");
     alienLocX = x;
     alienLocY = y;
+    moveSpeed = 5;
   }
 
   void displayAlien() {
     imageMode(CENTER);
     alien.resize(100, 50);
     image(alien, alienLocX, alienLocY);
+  }
+
+  void alienMove() {
+    alienLocX += moveSpeed;
+    if (alienLocX < 50) {
+      for (Alien alien : aliens) {
+        alienLocX = 50;
+        alien.moveSpeed *= -1;
+      }
+    }
+    if (alienLocX > width-50) {
+      for (Alien alien : aliens) {
+        alienLocX = width - 50;
+        alien.moveSpeed *= -1;
+      }
+    }
   }
 }
 

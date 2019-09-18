@@ -28,7 +28,7 @@ void keyPressed() {
     player1Space = true;
     println("space");
   }
-  if (key == ENTER){
+  if (key == ENTER) {
     stage = 1;
   }
 }
