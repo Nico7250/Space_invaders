@@ -17,13 +17,6 @@ public class Alien {
   }
 }
 
-/*void createFleet(){
- for (int i = 0; i < 9; i ++){
- aliens[i] = new Alien(i*150 + 150, 50);
- }
- 
- }*/
-
 
 int getNumberAliensX() {
   int alienWidth = width/18;
@@ -34,21 +27,21 @@ int getNumberAliensX() {
   return numberAliensX;
 }
 
-int getNumberRows(){
- int alienHeight = 50;
- int shipHeight = 97;
- 
- int avalibleSpaceY = (height - (3 * alienHeight) - shipHeight);
- int numberRows = int(avalibleSpaceY / (2 * alienHeight));
- 
- return numberRows;
+int getNumberRows() {
+  int alienHeight = 50;
+  int shipHeight = 97;
+
+  int avalibleSpaceY = (height - (3 * alienHeight) - shipHeight);
+  int numberRows = int(avalibleSpaceY / (2 * alienHeight));
+
+  return numberRows;
 }
 
 
-void createAlien(int alienNumber,int rowNumber) {
+void createAlien(int alienNumber, int rowNumber) {
   int alienWidth = width/18;
   int alienHeight = 50;
-  
+
   alien = new Alien(0, 50);
   int alienX = alienWidth + 2 * alienWidth * alienNumber;
   int alienY = alienHeight +2 * alienHeight * rowNumber;
@@ -62,8 +55,8 @@ void createAlien(int alienNumber,int rowNumber) {
 void createFleet() {
   int numberAliensX = getNumberAliensX();
   int numberRows = getNumberRows();
-  
-  for (int rowNumber = 0; rowNumber < numberRows; rowNumber += 1){
+
+  for (int rowNumber = 0; rowNumber < numberRows; rowNumber += 1) {
     for (int alienNumber = 0; alienNumber < numberAliensX; alienNumber += 1) {
       createAlien(alienNumber, rowNumber);
     }

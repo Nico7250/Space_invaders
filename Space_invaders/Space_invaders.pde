@@ -9,7 +9,6 @@ int stage = 1;
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
 float[] stars3 = new float [1000];
-//Alien[] aliens = new Alien[9];
 
 ArrayList <Alien> aliens;
 ArrayList <Bullet> bullets;
@@ -51,10 +50,6 @@ void draw() {
  for (Alien alien : aliens) {
     alien.displayAlien();
   }
-  /*
-  for (int i = 0; i < aliens.length; i++){
-    aliens[i].displayAlien();
-  }*/
 
   player.displayPlayer();
   player.movePlayer();
