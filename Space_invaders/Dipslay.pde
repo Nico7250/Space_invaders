@@ -5,3 +5,9 @@ void createStars(){
     stars3[i] = (random(0, 4));
   } 
 }
+
+void displayStars(){
+  for (int i = 0; i<1000; i++) {
+    rect(stars[i], stars2[i], stars3[i], stars3[i]);
+  }
+}
