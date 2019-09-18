@@ -20,7 +20,7 @@ void setup() {
   player = new Player("spaceShip.png");
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
   aliens.add(new Alien());
-  //createFleet();
+  createFleet();
 
   for (int i=0; i<1000; i++) {
     stars[i] = (random(0, width));

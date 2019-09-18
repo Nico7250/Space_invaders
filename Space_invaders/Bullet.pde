@@ -16,7 +16,7 @@ public class Bullet {
   }
 
   void move() {
-    playerBulletY -= 1;
+    playerBulletY -= 5;
   }
 
   void shoot() {
