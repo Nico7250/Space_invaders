@@ -35,5 +35,6 @@ public class Bullet {
   }
 
   void deleteBulletOutOfBound() {
+    
   }
 }

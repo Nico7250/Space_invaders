@@ -1,6 +1,7 @@
 Alien alien;
 Player player;
 Bullet bullet;
+import java.util.Iterator;
 
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
@@ -44,4 +45,12 @@ void draw() {
   textAlign(CENTER);
   textSize(32);
   text(frameRate, 200, 200);
+  
+  Iterator<Bullet> shoot = bullets.iterator();
+  while (shoot.hasNext()) {
+    Bullet b = shoot.next();
+    if (b.playerBulletY <=1){
+    shoot.remove();
+    }
+  }
 }
