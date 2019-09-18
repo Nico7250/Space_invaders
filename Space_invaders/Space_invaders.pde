@@ -1,9 +1,10 @@
+import java.util.Iterator;
+
 Alien alien;
 Player player;
 Bullet bullet;
-import java.util.Iterator;
 
-int stage = 1;
+int stage = 0;
 
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
@@ -30,9 +31,10 @@ void setup() {
 void draw() {
    if (stage == 0){
       background(54,57,63);
+      //textFont(zigBlack);
       textAlign(CENTER);
       textSize(36);
-      text("$PACE INVADER$",height/6,width/1);
+      text("$PACE INVADER$", width/2, height/5);
    }
      else if(stage == 1){
   background(0);
