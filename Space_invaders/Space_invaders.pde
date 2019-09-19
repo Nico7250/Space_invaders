@@ -29,7 +29,6 @@ void setup() {
   player = new Player("spaceShip.png");
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
   rules = new Rules();
-  //aliens.add(new Alien());
   createFleet();
   createStars();
   /*mainMusic = new SoundFile(this, "Space_Invaders.mp3");

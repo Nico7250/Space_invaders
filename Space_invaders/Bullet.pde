@@ -30,11 +30,11 @@ public class Bullet {
     }
   }
 
-  void removeAll(){
+  void removeAll() {
     for (int i = bullets.size() -1; i >= 0; i--) {
-        Bullet bullet = bullets.get(i);
-        bullets.remove(i);
-      }
+      Bullet bullet = bullets.get(i);
+      bullets.remove(i);
+    }
   }
 
   void displayBullet() {

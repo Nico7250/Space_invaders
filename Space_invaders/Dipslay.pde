@@ -62,8 +62,8 @@ void stage1() {
     if (aliens.size() == 0) {
       bullet.removeAll();
       createFleet();
-      for (Alien alien : aliens){
-      alien.moveSpeed *= 2;
+      for (Alien alien : aliens) {
+        alien.moveSpeed *= 2;
       }
     }
   }
