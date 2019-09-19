@@ -30,6 +30,7 @@ public class Bullet {
     }
   }
 
+  // Removes all bullet, this is to be used when leveling up
   void removeAll() {
     for (int i = bullets.size() -1; i >= 0; i--) {
       Bullet bullet = bullets.get(i);
@@ -43,7 +44,7 @@ public class Bullet {
     image(playerBullet, playerBulletX, playerBulletY);
   }
 
-
+  // Deletes bullets when out of screen so that the game wont lagg as much and eventually crash
   void deleteBulletOutOfBound() {
     Iterator<Bullet> shoot = bullets.iterator();
     while (shoot.hasNext()) {
@@ -55,17 +56,18 @@ public class Bullet {
   }
 }
 
+// Detects collision between alien and player shot
 void bulletDetect() {
-  for (int i = bullets.size() -1; i >= 0; i--) {
-    Bullet bullet = bullets.get(i);
+  for (int i = bullets.size() -1; i >= 0; i--) { // Using a decrementing loop / counting backwards to -
+    Bullet bullet = bullets.get(i);              // - avoid infinity loop due to how arrayList works
     for (int j = aliens.size() -1; j >= 0; j--) {
       Alien alien = aliens.get(j);
       float d = dist(alien.alienLocX, alien.alienLocY, bullet.playerBulletX, bullet.playerBulletY);
       if (d < 20 + 20) {
         bullets.remove(i);
         aliens.remove(j);
-        rules.score1 += 1000;
-        alien.moveSpeedUp();
+        rules.score1 += 1000; // Increses score everytime an alien is killed
+        alien.moveSpeedUp(); // Increses the movement speed of all aliens when alien is killed
       }
     }
   }

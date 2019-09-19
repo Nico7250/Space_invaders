@@ -40,6 +40,7 @@ void setup() {
    }*/
 }
 
+// Stages are made in the display tab
 void draw() {
   if (stage == 0) {
     stage0();

@@ -24,6 +24,7 @@ public class Alien {
     image(alien, alienLocX, alienLocY);
   }
 
+  // Increses movement speeed of all aliens (used for speeding up all aliens when one is killed
   void moveSpeedUp() {
     for (Alien alien : aliens) {
       alien.moveSpeed *= 1.03;
@@ -38,21 +39,21 @@ public class Alien {
     }
   }
 
+
   void alienMove() {
     alienLocX += moveSpeed;
     alienLocY += moveSpeedY;
+    
     if (alienLocX < 50) {
-
       for (Alien alien : aliens) {
-        alien.alienLocY += 25;
+        alien.alienLocY += 25; // Moves all aliens a row down when boarder is hit
         alienLocX = 50;
         alien.moveSpeed *= -1;
-        //alien.moveSpeed += 0.75;
       }
     }
     if (alienLocX > width-50) {
       for (Alien alien : aliens) {
-        alien.alienLocY += 25;
+        alien.alienLocY += 25; // Moves all aliens a row down when boarder is hit
         alienLocX = width - 50;
         alien.moveSpeed *= -1;
       }
@@ -61,6 +62,10 @@ public class Alien {
 }
 
 
+/* Functions below are all made for calculating the amount of aliens
+the screen can fit on the x and y-axis according to the alien sprites size
+and finaly a function for 'spawning' all the aliens
+*/
 int getNumberAliensX() {
   int alienWidth = width/18;
   int avalibleSpaceX = width -2 *alienWidth;
