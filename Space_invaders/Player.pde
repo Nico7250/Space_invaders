@@ -16,7 +16,7 @@ public class Player {
   }
 
   // Moves spaceship on the x and y-axis, also possible to move diagonally
-  void movePlayer() {
+  void movePlayer1() {
     if (player1Left) {
       spaceShipX += -shipMoveSpeed;
     }
@@ -27,6 +27,21 @@ public class Player {
       spaceShipY += -shipMoveSpeed;
     }
     if (player1Down) {
+      spaceShipY += shipMoveSpeed;
+    }
+  }
+  
+   void movePlayer2() {
+    if (player2Left) {
+      spaceShipX += -shipMoveSpeed;
+    }
+    if (player2Right) {
+      spaceShipX += shipMoveSpeed;
+    }
+    if (player2Up) {
+      spaceShipY += -shipMoveSpeed;
+    }
+    if (player2Down) {
       spaceShipY += shipMoveSpeed;
     }
   }

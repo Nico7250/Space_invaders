@@ -4,7 +4,12 @@ boolean player1Left;
 boolean player1Right;
 boolean player1Up;
 boolean player1Down;
-boolean player1Space;
+boolean player1Shoot;
+boolean player2Left;
+boolean player2Right;
+boolean player2Up;
+boolean player2Down;
+boolean player2Shoot;
 
 // Checks for key pressed and makes boolean variable true
 void keyPressed() {
@@ -25,8 +30,23 @@ void keyPressed() {
     exit();
   }
   if (key == ' ') {
-    player1Space = true;
+    player1Shoot = true;
     println("space");
+  }
+    if (key == 'a') {
+    player2Left = true;
+  }
+  if (key == 'd') {
+    player2Right = true;
+  }
+  if (key == 'w') {
+    player2Up = true;
+  }
+  if (key == 's') {
+    player2Down = true;
+  }
+  if (keyCode == SHIFT) {
+    player2Shoot = true;
   }
   if (key == 'o' || key == 'O') {
     stage = 0;
@@ -61,6 +81,21 @@ void keyReleased() {
     player1Down = false;
   }
   if (key == ' ') {
-    player1Space = false;
+    player1Shoot = false;
+  }
+  if (key == 'a') {
+    player2Left = false;
+  }
+  if (key == 'd') {
+    player2Right = false;
+  }
+  if (key == 'w') {
+    player2Up = false;
+  }
+  if (key == 's') {
+    player2Down = false;
+  }
+  if (keyCode == SHIFT) {
+    player2Shoot = false;
   }
 }
