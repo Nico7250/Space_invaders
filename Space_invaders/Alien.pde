@@ -9,7 +9,7 @@ public class Alien {
     alien = loadImage("alien.png");
     alienLocX = x;
     alienLocY = y;
-    moveSpeed = 5;
+    moveSpeed = 1.5;
   }
 
   void displayAlien() {

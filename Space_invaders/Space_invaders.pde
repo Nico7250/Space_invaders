@@ -47,6 +47,8 @@ void draw() {
   } else if (stage == 1) {
     background(0);
     displayStars();
+    text("Player 1 Score:" + score1, width/10,height/10);
+    text("Player 2 Score:" + score2, width/1.1,height/10);
 
     bullet.shoot();
     for (Bullet bullet : bullets) {
@@ -64,7 +66,7 @@ void draw() {
     player.playerConstrain();
     textAlign(CENTER);
     textSize(32);
-    text(frameRate, 200, 200);
+    text(frameRate, width/1.05, height/1.03);
 
     bullet.deleteBulletOutOfBound();
   }
