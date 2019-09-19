@@ -43,6 +43,6 @@ void draw() {
   if (stage == 0) {
     stage0();
   } else if (stage == 1) {
-    stage1();    
+    stage1();
   }
 }

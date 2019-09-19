@@ -57,9 +57,9 @@ void bulletDetect() {
       Alien alien = aliens.get(j);
       float d = dist(alien.alienLocX, alien.alienLocY, bullet.playerBulletX, bullet.playerBulletY);
       if (d < 20 + 20) {
-        println("Test");
         bullets.remove(i);
         aliens.remove(j);
+        score1 += 1;
       }
     }
   }

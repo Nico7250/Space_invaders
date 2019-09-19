@@ -33,6 +33,7 @@ public class Alien {
         alien.alienLocY += 25;
         alienLocX = 50;
         alien.moveSpeed *= -1;
+        alien.moveSpeed += 0.75;
       }
     }
     if (alienLocX > width-50) {
