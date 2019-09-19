@@ -4,6 +4,7 @@ public class Player {
   PImage spaceShip;
   public float spaceShipX;
   public float spaceShipY;
+  int shipMoveSpeed;
 
   // With the PImage as a input string, it is possible to make 2 players with different spaceships
   Player(String playerImage) {
@@ -11,21 +12,22 @@ public class Player {
     spaceShip = loadImage(playerImage);
     spaceShipX = width/2;
     spaceShipY = height;
+    shipMoveSpeed = 5;
   }
 
   // Moves spaceship on the x and y-axis, also possible to move diagonally
   void movePlayer() {
     if (player1Left) {
-      spaceShipX += -5;
+      spaceShipX += -shipMoveSpeed;
     }
     if (player1Right) {
-      spaceShipX += 5;
+      spaceShipX += shipMoveSpeed;
     }
     if (player1Up) {
-      spaceShipY += -5;
+      spaceShipY += -shipMoveSpeed;
     }
     if (player1Down) {
-      spaceShipY += 5;
+      spaceShipY += shipMoveSpeed;
     }
   }
 

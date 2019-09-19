@@ -30,7 +30,12 @@ public class Bullet {
     }
   }
 
-
+  void removeAll(){
+    for (int i = bullets.size() -1; i >= 0; i--) {
+        Bullet bullet = bullets.get(i);
+        bullets.remove(i);
+      }
+  }
 
   void displayBullet() {
     imageMode(CENTER);
@@ -59,7 +64,8 @@ void bulletDetect() {
       if (d < 20 + 20) {
         bullets.remove(i);
         aliens.remove(j);
-        score1 += 1;
+        rules.score1 += 1000;
+        alien.moveSpeedUp();
       }
     }
   }

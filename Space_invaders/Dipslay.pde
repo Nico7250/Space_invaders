@@ -47,14 +47,26 @@ void stage1() {
   player.displayPlayer();
   player.movePlayer();
   player.playerConstrain();
-  text("Player 1 Score:" + score1, width/10, height/10);
-  text("Player 2 Score:" + score2, width/1.1, height/10);
+  text("Player 1 Score:" + rules.score1, width/10, height/10);
+  text("Player 2 Score:" + rules.score2, width/1.1, height/10);
   textAlign(CENTER);
   textSize(32);
   text(frameRate, width/1.05, height/1.03);
 
   bullet.deleteBulletOutOfBound();
   bulletDetect();
+  rules.calculateScore();
+  rules.winCondition();
+
+  if (alien.levelUp()) {
+    if (aliens.size() == 0) {
+      bullet.removeAll();
+      createFleet();
+      for (Alien alien : aliens){
+      alien.moveSpeed *= 2;
+      }
+    }
+  }
 }
 
 

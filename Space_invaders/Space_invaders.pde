@@ -5,6 +5,7 @@ import java.util.Iterator;
 Alien alien;
 Player player;
 Bullet bullet;
+Rules rules;
 
 int stage = 0;
 //SoundFile mainMusic;
@@ -27,6 +28,7 @@ void setup() {
 
   player = new Player("spaceShip.png");
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
+  rules = new Rules();
   //aliens.add(new Alien());
   createFleet();
   createStars();
