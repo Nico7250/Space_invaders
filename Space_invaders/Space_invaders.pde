@@ -1,4 +1,4 @@
-import processing.sound.*;
+//import processing.sound.*;
 import java.util.Iterator;
 
 
@@ -7,7 +7,7 @@ Player player;
 Bullet bullet;
 
 int stage = 0;
-SoundFile mainMusic;
+//SoundFile mainMusic;
 
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
@@ -30,20 +30,19 @@ void setup() {
   //aliens.add(new Alien());
   createFleet();
   createStars();
-  mainMusic = new SoundFile(this, "Space_Invaders.mp3");
-  if (stage == 0){
-  mainMusic.play();
-  }
-  if (stage == 1) {
-    mainMusic.stop();
-  }
-  
+  /*mainMusic = new SoundFile(this, "Space_Invaders.mp3");
+   if (stage == 0){
+   mainMusic.play();
+   }
+   if (stage == 1) {
+   mainMusic.stop();
+   }*/
 }
 
 void draw() {
   if (stage == 0) {
     stage0();
   } else if (stage == 1) {
-    stage1();
+    stage1();    
   }
 }

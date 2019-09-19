@@ -28,19 +28,19 @@ void keyPressed() {
     player1Space = true;
     println("space");
   }
-  if (key == 'o' || key == 'O'){
+  if (key == 'o' || key == 'O') {
     stage = 0;
   }
   if (key == ENTER) {
     stage = 1;
   }
-  if (key == 'j' || key == 'J'){
-  stage = 1;
+  if (key == 'j' || key == 'J') {
+    stage = 1;
   }
-  if (key == 'k' || key == 'K'){
+  if (key == 'k' || key == 'K') {
     stage = 2;
   }
-  if (key == 'l' || key == 'L'){
+  if (key == 'l' || key == 'L') {
     stage = 3;
   }
 }

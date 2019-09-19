@@ -1,8 +1,8 @@
 
 public class Alien {
   PImage alien;
-  float alienLocX;
-  float alienLocY;
+  public float alienLocX;
+  public float alienLocY;
   float moveSpeedY;
   float moveSpeed;
   float moveSpeed2;
@@ -13,7 +13,7 @@ public class Alien {
     alienLocX = x;
     alienLocY = y;
     moveSpeedY = 0;
-    moveSpeed = 5;
+    moveSpeed = 1.5;
     moveSpeed2 = 3.5;
     moveSpeed3 = 7.5;
   }
@@ -28,16 +28,16 @@ public class Alien {
     alienLocX += moveSpeed;
     alienLocY += moveSpeedY;
     if (alienLocX < 50) {
-      
+
       for (Alien alien : aliens) {
-        alien.alienLocY += 50;
+        alien.alienLocY += 25;
         alienLocX = 50;
         alien.moveSpeed *= -1;
       }
     }
     if (alienLocX > width-50) {
       for (Alien alien : aliens) {
-        alien.alienLocY += 50;
+        alien.alienLocY += 25;
         alienLocX = width - 50;
         alien.moveSpeed *= -1;
       }

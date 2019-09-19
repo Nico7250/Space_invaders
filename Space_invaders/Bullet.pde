@@ -1,5 +1,5 @@
 long timer; // Used in calculation for bullet delay
-int bulletDelay = 500; // The delay between shots
+int bulletDelay = 250; // The delay between shots
 
 // Uses Player as parent, this is used for calculation of bullet spawn location
 public class Bullet {
@@ -30,11 +30,14 @@ public class Bullet {
     }
   }
 
+
+
   void displayBullet() {
     imageMode(CENTER);
     playerBullet.resize(24, 38);
     image(playerBullet, playerBulletX, playerBulletY);
   }
+  
 
   void deleteBulletOutOfBound() {
     Iterator<Bullet> shoot = bullets.iterator();
