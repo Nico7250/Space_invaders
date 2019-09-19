@@ -66,7 +66,7 @@ void bulletDetect() {
       if (d < 20 + 20) {
         bullets.remove(i);
         aliens.remove(j);
-        rules.score1 += 1000; // Increses score everytime an alien is killed
+        rules.score1 += 100; // Increses score everytime an alien is killed
         alien.moveSpeedUp(); // Increses the movement speed of all aliens when alien is killed
       }
     }

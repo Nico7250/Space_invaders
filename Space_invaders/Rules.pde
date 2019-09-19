@@ -18,6 +18,7 @@ public class Rules {
 
   void winCondition() {
     if (score1 >= 10000) {
+      println("you Win");
     }
   }
 }
