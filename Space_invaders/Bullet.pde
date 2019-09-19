@@ -20,8 +20,8 @@ public class Bullet {
   }
 
   // Adds a bullet to the arraylist bullets
-  void shoot() {
-    if (player1Space) {
+  void shoot(boolean shoot) {
+    if (shoot) {
       if (millis() - timer >= bulletDelay) { // Calculates delay between shots
         timer = millis();
         Bullet bullet = new Bullet(player, parent.spaceShipX, parent.spaceShipY-35); // Spawns bullet at spaceShip location

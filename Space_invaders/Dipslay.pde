@@ -33,7 +33,7 @@ void stage1() {
   background(0);
   displayStars();
 
-  bullet.shoot();
+  bullet.shoot(player1Shoot);
   for (Bullet bullet : bullets) {
     bullet.displayBullet();
     bullet.move();
@@ -45,7 +45,9 @@ void stage1() {
   }
 
   player.displayPlayer();
-  player.movePlayer();
+  player.movePlayer1();
+  player.displayPlayer2();
+  player.movePlayer2();
   player.playerConstrain();
   text("Player 1 Score:" + rules.score1, width/10, height/10);
   text("Player 2 Score:" + rules.score2, width/1.1, height/10);
