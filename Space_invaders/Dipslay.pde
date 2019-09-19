@@ -33,7 +33,6 @@ void stage1() {
   background(0);
   displayStars();
 
-  bullet.shoot(player1Shoot);
   for (Bullet bullet : bullets) {
     bullet.displayBullet();
     bullet.move();
@@ -44,6 +43,8 @@ void stage1() {
     alien.alienMove();
   }
 
+  bullet.shoot(player2Shoot, player.rectX, player.rectY);
+  bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
   player.displayPlayer();
   player.movePlayer1();
   player.displayPlayer2();
