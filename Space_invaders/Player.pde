@@ -57,6 +57,7 @@ public class Player {
   }
 
   void displayPlayer2(){
+    rectMode(CENTER);
     fill(0,0,255);
    rect(rectX, rectY - 50, 100, 100); 
   }

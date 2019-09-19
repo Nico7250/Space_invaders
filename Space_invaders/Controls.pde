@@ -45,7 +45,7 @@ void keyPressed() {
   if (key == 's') {
     player2Down = true;
   }
-  if (keyCode == SHIFT) {
+  if (key == '<') {
     player2Shoot = true;
   }
   if (key == 'o' || key == 'O') {
@@ -95,7 +95,7 @@ void keyReleased() {
   if (key == 's') {
     player2Down = false;
   }
-  if (keyCode == SHIFT) {
+  if (key == '<') {
     player2Shoot = false;
   }
 }
