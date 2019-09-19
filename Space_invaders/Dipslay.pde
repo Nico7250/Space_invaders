@@ -54,6 +54,7 @@ void stage1() {
   text(frameRate, width/1.05, height/1.03);
 
   bullet.deleteBulletOutOfBound();
+  //bulletDetect();
 }
 
 

@@ -37,7 +37,7 @@ public class Bullet {
     playerBullet.resize(24, 38);
     image(playerBullet, playerBulletX, playerBulletY);
   }
-  
+
 
   void deleteBulletOutOfBound() {
     Iterator<Bullet> shoot = bullets.iterator();
@@ -49,3 +49,42 @@ public class Bullet {
     }
   }
 }
+
+/*void bulletDetect() {
+
+  Iterator<Bullet> shot = bullets.iterator();
+  Iterator<Alien> a = aliens.iterator();
+  while (shot.hasNext()) {
+    Bullet bullet = shot.next();
+    while (a.hasNext()) {
+      Alien alien = a.next();
+      float d = dist(alien.alienLocX, alien.alienLocY, bullet.playerBulletX, bullet.playerBulletY);
+      if (d < 20 + 20) {
+        println("Test");
+        shot.remove();
+        a.remove();
+      }
+    }
+  }
+
+
+  for (int i = bullets.size() -1; i >= 0; i--) {
+    for (int j = aliens.size() -1; j >= 0; j--) {
+      float d = dist(alien.alienLocX, alien.alienLocY, bullet.playerBulletX, bullet.playerBulletY);
+      if (d < 20 + 20) {
+        println("Test");
+        // bullets.remove(i);
+      }
+    }
+  }
+
+  for (Bullet bullet : bullets) {
+    for (Alien alien : aliens) {
+      float d = dist(alien.alienLocX, alien.alienLocY, bullet.playerBulletX, bullet.playerBulletY);
+      if (d < 50 + 17) {
+        println("Test");
+        bullets.remove(bullet);
+      }
+    }
+  }
+}*/
