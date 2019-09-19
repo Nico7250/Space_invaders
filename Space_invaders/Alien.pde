@@ -4,12 +4,16 @@ public class Alien {
   float alienLocX;
   float alienLocY;
   float moveSpeed;
+  float moveSpeed2;
+  float moveSpeed3;
 
   Alien(float x, float y) {
     alien = loadImage("alien.png");
     alienLocX = x;
     alienLocY = y;
     moveSpeed = 1.5;
+    moveSpeed2 = 3.5;
+    moveSpeed3 = 7.5;
   }
 
   void displayAlien() {
