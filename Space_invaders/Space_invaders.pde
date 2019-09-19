@@ -7,6 +7,7 @@ Player player;
 Bullet bullet;
 
 int stage = 0;
+SoundFile mainMusic;
 
 float[] stars = new float[1000];
 float[] stars2 = new float[1000];
@@ -29,13 +30,20 @@ void setup() {
   //aliens.add(new Alien());
   createFleet();
   createStars();
+  mainMusic = new SoundFile(this, "Space_Invaders.mp3");
+  if (stage == 0){
+  mainMusic.play();
+  }
+  if (stage == 1) {
+    mainMusic.stop();
+  }
+  
 }
 
 void draw() {
   if (stage == 0) {
     background(54, 57, 63);
     displayStars();
-    //textFont(zigBlack);
     textAlign(CENTER);
     textSize(72);
     text("$PACE INVADER$", width/2, height/5);
