@@ -3,6 +3,7 @@ public class Alien {
   PImage alien;
   float alienLocX;
   float alienLocY;
+  float moveSpeedY;
   float moveSpeed;
   float moveSpeed2;
   float moveSpeed3;
@@ -11,6 +12,7 @@ public class Alien {
     alien = loadImage("alien.png");
     alienLocX = x;
     alienLocY = y;
+    moveSpeedY = 0;
     moveSpeed = 1.5;
     moveSpeed2 = 3.5;
     moveSpeed3 = 7.5;
@@ -24,6 +26,7 @@ public class Alien {
 
   void alienMove() {
     alienLocX += moveSpeed;
+    alienLocY += moveSpeedY;
     if (alienLocX < 50) {
       for (Alien alien : aliens) {
         alienLocX = 50;
@@ -32,6 +35,7 @@ public class Alien {
     }
     if (alienLocX > width-50) {
       for (Alien alien : aliens) {
+        //alien.moveSpeedY += 50;
         alienLocX = width - 50;
         alien.moveSpeed *= -1;
       }
