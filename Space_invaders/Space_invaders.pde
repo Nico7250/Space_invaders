@@ -54,5 +54,7 @@ void draw() {
    stage3(); 
   }else if (stage == 4){
    stage4(); 
+  }else if (stage == 5){
+    stage5();
   }
 }

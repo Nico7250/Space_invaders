@@ -44,7 +44,19 @@ void stage2(){
   displayButton("Extreme", width/2, height /1.25, 0, 0, 128);
 }
 
-void stage3() {
+void stage3(){
+  createMenuBackground();
+  displayButton("Back", width/2, height/1.25,0,0,128);
+  textAlign(CENTER);
+  fill(50,200,100);
+  textSize(40);
+  text("How to play:", width/2, height /12);
+  textSize(25);
+  text("Player 1:", width/2, height/7.5);
+  text("Steer with the arrow keyes and shoot with space", width/2, height/6.25);
+}
+
+void stage4() {
   createBackground();
 
   for (Bullet bullet : bullets) {
@@ -86,7 +98,7 @@ void stage3() {
 
 
 
-void stage4() {
+void stage5() {
   createBackground();
 
   for (Bullet bullet : bullets) {
