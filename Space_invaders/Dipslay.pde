@@ -1,3 +1,7 @@
+int buttonSizeX = 250;
+int buttonSizeY = 100;
+
+
 void createStars() {
   for (int i=0; i<1000; i++) {
     stars[i] = (random(0, width));
@@ -12,25 +16,36 @@ void displayStars() {
   }
 }
 
+
 void stage0() {
-  background(54, 57, 63);
-  displayStars();
+  createMenuBackground();
   textAlign(CENTER);
   textSize(72);
   text("$PACE INVADER$", width/2, height/5);
   textSize(14);
   text("Press 'ESC' to exit game.", width/2, height/1.1);
-  text("Press 'ENTER' to start game.", width/2, height/1.12);
   rectMode(CENTER);
 
-  displayButton("Play", width/2, height/3, 0, 0, 128, 250, 100);
-  displayButton ("Difficulty", width/2, height /1.75, 0, 0, 128, 250, 100);
-  displayButton("How to play", width/2, height /1.25, 0, 0, 128, 250, 100);
+  displayButton("Play", width/2, height/3, 0, 0, 128);
+  displayButton ("Difficulty", width/2, height /1.75, 0, 0, 128);
+  displayButton("How to play", width/2, height /1.25, 0, 0, 128);
+}
+void stage1() {
+  createMenuBackground();
+  displayButton("1 player", width/2, height/3, 0, 0, 128);
+  displayButton("2 player", width/2, height/1.75, 0, 0, 128);
+  displayButton("Back", width/2, height/1.25, 0, 0, 128);
 }
 
-void stage1() {
-  background(0);
-  displayStars();
+void stage2(){
+  createMenuBackground();
+  displayButton("Easy", width/2, height/3, 0, 0, 128);
+  displayButton ("Hard", width/2, height /1.75, 0, 0, 128);
+  displayButton("Extreme", width/2, height /1.25, 0, 0, 128);
+}
+
+void stage3() {
+  createBackground();
 
   for (Bullet bullet : bullets) {
     bullet.displayBullet();
@@ -71,9 +86,8 @@ void stage1() {
 
 
 
-void stage2() {
-  background(0);
-  displayStars();
+void stage4() {
+  createBackground();
 
   for (Bullet bullet : bullets) {
     bullet.displayBullet();
@@ -101,7 +115,7 @@ void stage2() {
   bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
   bullet.deleteBulletOutOfBound();
   bulletDetect();
-  
+
 
   rules.calculateScore();
   rules.winCondition();
@@ -118,9 +132,7 @@ void stage2() {
 }
 
 
-void stage3() {
-}
-void displayButton(String text, float x, float y, int r, int g, int b, int buttonSizeX, int buttonSizeY) {
+void displayButton(String text, float x, float y, int r, int g, int b) {
   fill(r, g, b);
   stroke(255);
   strokeWeight(2);
@@ -129,4 +141,14 @@ void displayButton(String text, float x, float y, int r, int g, int b, int butto
   textAlign(CENTER);
   textSize(24);
   text(text, x, y + 24, buttonSizeX, buttonSizeY);
+}
+
+void createMenuBackground() {
+  background(54, 57, 63);
+  displayStars();
+}
+
+void createBackground(){
+  background(0);
+  displayStars();
 }

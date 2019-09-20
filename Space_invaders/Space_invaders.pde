@@ -8,7 +8,7 @@ Player player2;
 Bullet bullet;
 Rules rules;
 
-int stage = 2;
+int stage = 0;
 //SoundFile mainMusic;
 
 float[] stars = new float[1000];
@@ -49,5 +49,8 @@ void draw() {
     stage1();
   } else if (stage == 2) {
     stage2();
+  }
+  else if (stage == 3){
+   stage3(); 
   }
 }
