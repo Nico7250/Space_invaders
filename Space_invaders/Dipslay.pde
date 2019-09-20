@@ -1,4 +1,3 @@
-
 void createStars() {
   for (int i=0; i<1000; i++) {
     stars[i] = (random(0, width));
@@ -102,6 +101,7 @@ void stage2() {
   bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
   bullet.deleteBulletOutOfBound();
   bulletDetect();
+  
 
   rules.calculateScore();
   rules.winCondition();
@@ -120,12 +120,6 @@ void stage2() {
 
 void stage3() {
 }
-
-
-
-
-
-
 void displayButton(String text, float x, float y, int r, int g, int b, int buttonSizeX, int buttonSizeY) {
   fill(r, g, b);
   stroke(255);

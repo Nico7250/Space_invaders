@@ -22,7 +22,6 @@ ArrayList <Bullet> bullets;
 void setup() {
   fullScreen();
   frameRate(60);
-  //size(700,700);
 
   aliens = new ArrayList<Alien>();
   bullets = new ArrayList<Bullet>();

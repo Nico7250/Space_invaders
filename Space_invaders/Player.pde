@@ -1,5 +1,3 @@
-
-
 public class Player {
   PImage spaceShip;
   PImage spaceShip2;

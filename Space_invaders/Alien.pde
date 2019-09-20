@@ -1,4 +1,3 @@
-
 public class Alien {
   PImage alien;
   public float alienLocX;
