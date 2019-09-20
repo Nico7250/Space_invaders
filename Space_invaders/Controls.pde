@@ -31,7 +31,6 @@ void keyPressed() {
   }
   if (key == ' ') {
     player1Shoot = true;
-    println("space");
   }
     if (key == 'a') {
     player2Left = true;

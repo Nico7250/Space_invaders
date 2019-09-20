@@ -4,10 +4,11 @@ import java.util.Iterator;
 
 Alien alien;
 Player player;
+Player player2;
 Bullet bullet;
 Rules rules;
 
-int stage = 0;
+int stage = 2;
 //SoundFile mainMusic;
 
 float[] stars = new float[1000];
@@ -27,6 +28,7 @@ void setup() {
   bullets = new ArrayList<Bullet>();
 
   player = new Player("spaceShip.png");
+  player2 = new Player("spaceShip2.png");
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
   rules = new Rules();
   createFleet();
@@ -46,5 +48,7 @@ void draw() {
     stage0();
   } else if (stage == 1) {
     stage1();
+  } else if (stage == 2) {
+    stage2();
   }
 }

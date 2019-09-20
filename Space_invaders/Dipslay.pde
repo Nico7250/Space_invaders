@@ -42,22 +42,20 @@ void stage1() {
     alien.displayAlien();
     alien.alienMove();
   }
-
-  bullet.shoot(player2Shoot, player.rectX, player.rectY);
-  bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
-  player.displayPlayer();
-  player.movePlayer1();
-  player.displayPlayer2();
-  player.movePlayer2();
-  player.playerConstrain();
   text("Player 1 Score:" + rules.score1, width/10, height/10);
   text("Player 2 Score:" + rules.score2, width/1.1, height/10);
   textAlign(CENTER);
   textSize(32);
   text(frameRate, width/1.05, height/1.03);
 
+  player.displayPlayer();
+  player.movePlayer1();
+  player.playerConstrain();
+
+  bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
   bullet.deleteBulletOutOfBound();
   bulletDetect();
+
   rules.calculateScore();
   rules.winCondition();
 
@@ -75,6 +73,48 @@ void stage1() {
 
 
 void stage2() {
+  background(0);
+  displayStars();
+
+  for (Bullet bullet : bullets) {
+    bullet.displayBullet();
+    bullet.move();
+  }
+
+  for (Alien alien : aliens) {
+    alien.displayAlien();
+    alien.alienMove();
+  }
+  text("Player 1 Score:" + rules.score1, width/10, height/10);
+  text("Player 2 Score:" + rules.score2, width/1.1, height/10);
+  textAlign(CENTER);
+  textSize(32);
+  text(frameRate, width/1.05, height/1.03);
+
+  player.displayPlayer();
+  player.movePlayer1();
+  player.playerConstrain();
+  player2.displayPlayer2();
+  player2.movePlayer2();
+  player2.player2Constrain();
+
+  bullet.shoot(player2Shoot, player2.spaceShip2X, player2.spaceShip2Y);
+  bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
+  bullet.deleteBulletOutOfBound();
+  bulletDetect();
+
+  rules.calculateScore();
+  rules.winCondition();
+
+  if (alien.levelUp()) {
+    if (aliens.size() == 0) {
+      bullet.removeAll();
+      createFleet();
+      for (Alien alien : aliens) {
+        alien.moveSpeed *= 2;
+      }
+    }
+  }
 }
 
 
