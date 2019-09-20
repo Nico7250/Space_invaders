@@ -52,5 +52,7 @@ void draw() {
   }
   else if (stage == 3){
    stage3(); 
+  }else if (stage == 4){
+   stage4(); 
   }
 }
