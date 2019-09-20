@@ -146,7 +146,7 @@ void mousePressed() {
       stage = 0;
     }
   } else if (stage == 3) {
-    float detectBack = dist(mouseX, mouseY, width/2, height/1.25);
+    float detectBack = dist(mouseX, mouseY, width/15, height/1.05);
     if (detectBack < (buttonSizeX/2.5) + (buttonSizeY/2.5)) {
       stage = 0;
     }

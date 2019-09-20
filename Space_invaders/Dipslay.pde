@@ -1,6 +1,6 @@
 int buttonSizeX = 250;
 int buttonSizeY = 100;
-
+PImage player1;
 
 void createStars() {
   for (int i=0; i<1000; i++) {
@@ -46,14 +46,23 @@ void stage2(){
 
 void stage3(){
   createMenuBackground();
-  displayButton("Back", width/2, height/1.25,0,0,128);
+  line(width/2,height/1.001,width/2,height/1000);
+  displayButton("Back", width/15, height/1.05,0,0,128);
   textAlign(CENTER);
   fill(50,200,100);
-  textSize(40);
-  text("How to play:", width/2, height /12);
+  textSize(46);
+  text("How To Play", width/2, height /12);
+  textSize(32);
+  text("Player 1:", width/5, height/7.5);
   textSize(25);
-  text("Player 1:", width/2, height/7.5);
-  text("Steer with the arrow keyes and shoot with space", width/2, height/6.25);
+  text("Movement: Arrow Keys", width/5, height/6);
+  text("Interact/shoot: SPACEBAR", width/5, height/4.5);
+  textSize(32);
+  text("Player 2:",width/1.25,height/7.5);
+  textSize(25);
+  text("Movement: W, A, S, D", width/1.25, height/6);
+  text("Interact/shoot: CTRL", width/1.25, height/4.5);
+  player1 = loadImage("spaceShip.png");
 }
 
 void stage4() {
