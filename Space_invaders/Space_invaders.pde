@@ -28,8 +28,8 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   //bulletsPlayer2 = new ArrayList<Bullet>();
 
-  player = new Player("spaceShip.png", width/2, height);
-  player2 = new Player("spaceShip2.png", width/4, height);
+  player = new Player("../Resources/spaceShip.png", width/2, height);
+  player2 = new Player("../Resources/spaceShip2.png", width/4, height);
   bullet = new Bullet(player.position.x, player.position.y);
   rules = new Rules();
   createFleet();

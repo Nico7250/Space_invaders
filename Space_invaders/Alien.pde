@@ -8,7 +8,7 @@ public class Alien {
   float moveSpeed3;
 
   Alien(float x, float y) {
-    alien = loadImage("alien.png");
+    alien = loadImage("../Resources/alien.png");
     alienLocX = x;
     alienLocY = y;
     moveSpeedY = 0;

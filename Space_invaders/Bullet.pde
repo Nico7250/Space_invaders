@@ -7,7 +7,7 @@ public class Bullet {
   PVector position;
 
   Bullet(float x, float y) {
-    playerBullet = loadImage("PlayerBullet.png");
+    playerBullet = loadImage("../Resources/PlayerBullet.png");
     position = new PVector(x, y);
   }
 
