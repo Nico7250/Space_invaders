@@ -26,8 +26,8 @@ void setup() {
   aliens = new ArrayList<Alien>();
   bullets = new ArrayList<Bullet>();
 
-  player = new Player("spaceShip.png");
-  player2 = new Player("spaceShip2.png");
+  player = new Player("spaceShip.png", width/2, height);
+  player2 = new Player("spaceShip2.png", width/4, height);
   bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
   rules = new Rules();
   createFleet();

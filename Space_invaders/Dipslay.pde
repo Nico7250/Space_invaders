@@ -90,7 +90,7 @@ void stage4() {
   bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
   bullet.deleteBulletOutOfBound();
   bulletDetect();
-  playerHit();
+  player.playerHit();
 
   rules.calculateScore();
   rules.winCondition();
@@ -129,14 +129,17 @@ void stage5() {
   player.displayPlayer();
   player.movePlayer1();
   player.playerConstrain();
+  player2.playerConstrain();
   player2.displayPlayer2();
   player2.movePlayer2();
-  player2.player2Constrain();
+ // player2.player2Constrain();
 
-  bullet.shoot(player2Shoot, player2.spaceShip2X, player2.spaceShip2Y);
+  bullet.shoot(player2Shoot, player2.spaceShipX, player2.spaceShipY);
   bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
   bullet.deleteBulletOutOfBound();
   bulletDetect();
+  player.playerHit();
+  player2.playerHit();
 
 
   rules.calculateScore();

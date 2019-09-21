@@ -3,20 +3,16 @@ public class Player {
   PImage spaceShip2;
   public float spaceShipX;
   public float spaceShipY;
-  public float spaceShip2X;
-  public float spaceShip2Y;
   int shipMoveSpeed;
 
   // With the PImage as a input string, it is possible to make 2 players with different spaceships
-  Player(String playerImage) {
+  Player(String playerImage, float x, float y) {
 
     spaceShip = loadImage(playerImage);
     spaceShip2 = loadImage(playerImage);
-    spaceShipX = width/2;
-    spaceShipY = height;
+    spaceShipX = x;
+    spaceShipY = y;
     shipMoveSpeed = 5;
-    spaceShip2X = width/4;
-    spaceShip2Y = height-50;
   }
 
   // Moves spaceship on the x and y-axis, also possible to move diagonally
@@ -37,16 +33,16 @@ public class Player {
   
    void movePlayer2() {
     if (player2Left) {
-      spaceShip2X += -shipMoveSpeed;
+      spaceShipX += -shipMoveSpeed;
     }
     if (player2Right) {
-      spaceShip2X += shipMoveSpeed;
+      spaceShipX += shipMoveSpeed;
     }
     if (player2Up) {
-      spaceShip2Y += -shipMoveSpeed;
+      spaceShipY += -shipMoveSpeed;
     }
     if (player2Down) {
-      spaceShip2Y += shipMoveSpeed;
+      spaceShipY += shipMoveSpeed;
     }
   }
 
@@ -55,15 +51,10 @@ public class Player {
     spaceShipX = constrain(spaceShipX, 60, width-60);
     spaceShipY = constrain(spaceShipY, height-height/6, height-60);
   }
-  void player2Constrain() {
-    spaceShip2X = constrain(spaceShip2X, 60, width-60);
-    spaceShip2Y = constrain(spaceShip2Y, height-height/6, height-60);
-  }
-
   void displayPlayer2(){
     imageMode(CENTER);
     spaceShip2.resize(118,115);
-    image(spaceShip2,spaceShip2X, spaceShip2Y); 
+    image(spaceShip2,spaceShipX, spaceShipY); 
   }
   // Displays player
   void displayPlayer() {
@@ -71,4 +62,15 @@ public class Player {
     spaceShip.resize(120, 97);
     image(spaceShip, spaceShipX, spaceShipY);
   }
+  
+  void playerHit(){
+  for (int i = aliens.size() - 1; i >=0; i--){
+    Alien alien = aliens.get(i);
+    float d = dist(spaceShipX, spaceShipY, alien.alienLocX, alien.alienLocY);
+    if (d < 40 + 40){
+      aliens.remove(i);
+      println("kaboom");
+    }
+  }
+}
 }

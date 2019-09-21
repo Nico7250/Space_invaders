@@ -72,13 +72,3 @@ void bulletDetect() {
     }
   }
 }
-
-void playerHit(){
-  for (int i = aliens.size() - 1; i >=0; i--){
-    Alien alien = aliens.get(i);
-    float d = dist(player.spaceShipX, player.spaceShipY, alien.alienLocX, alien.alienLocY);
-    if (d < 40 + 40){
-      println("kaboom");
-    }
-  }
-}
