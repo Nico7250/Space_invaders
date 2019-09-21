@@ -51,7 +51,7 @@ void keyPressed() {
     stage = 0;
   }
   if (keyCode == BACKSPACE) {
-    stage = stage-1;
+    stage = 0;
   }
   if (key == 'k' || key == 'K') {
     stage = 2;
