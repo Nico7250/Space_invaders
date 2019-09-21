@@ -72,7 +72,6 @@ void stage4() {
   player.movePlayer1();
   player.playerConstrain();
 
-  bullet.shoot(player1Shoot, player.position.x, player.position.y);
   bullet.deleteBulletOutOfBound();
   alien.bulletDetectHit();
   player.playerHit();
@@ -117,10 +116,7 @@ void stage5() {
   player2.playerConstrain();
   player2.displayPlayer2();
   player2.movePlayer2();
-  // player2.player2Constrain();
 
-  bullet.shoot(player2Shoot, player2.position.x, player2.position.y);
-  bullet.shoot(player1Shoot, player.position.x, player.position.y);
   bullet.deleteBulletOutOfBound();
   alien.bulletDetectHit();
   player.playerHit();

@@ -28,7 +28,7 @@ void setup() {
 
   player = new Player("spaceShip.png", width/2, height);
   player2 = new Player("spaceShip2.png", width/4, height);
-  bullet = new Bullet(player, player.position.x, player.position.y);
+  bullet = new Bullet(player.position.x, player.position.y);
   rules = new Rules();
   createFleet();
   createStars();

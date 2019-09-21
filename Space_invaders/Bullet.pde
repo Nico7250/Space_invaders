@@ -5,10 +5,8 @@ int bulletDelay = 250; // The delay between shots
 public class Bullet {
   PImage playerBullet;
   PVector position;
-  Player parent;
 
-  Bullet(Player p, float x, float y) {
-    parent = p;
+  Bullet(float x, float y) {
     playerBullet = loadImage("PlayerBullet.png");
     position = new PVector(x, y);
   }
@@ -18,15 +16,13 @@ public class Bullet {
   }
 
   // Adds a bullet to the arraylist bullets
-  void shoot(boolean shoot, float x, float y) {
-    if (shoot) {
+  void shoot(float x, float y) {
       if (millis() - timer >= bulletDelay) { // Calculates delay between shots
         timer = millis();
-        Bullet bullet = new Bullet(player, x, y-35); // Spawns bullet at spaceShip location
+        Bullet bullet = new Bullet(x, y-35); // Spawns bullet at spaceShip location
         bullets.add(bullet);
       }
     }
-  }
 
   // Removes all bullet, this is to be used when leveling up
   void removeAll() {

@@ -27,6 +27,9 @@ public class Player {
     if (player1Down) {
       position.y += shipMoveSpeed;
     }
+    if (player1Shoot){
+      bullet.shoot(position.x, position.y);
+    }
   }
 
   void movePlayer2() {
@@ -41,6 +44,9 @@ public class Player {
     }
     if (player2Down) {
       position.y += shipMoveSpeed;
+    }
+    if (player2Shoot){
+       bullet.shoot(position.x, position.y);
     }
   }
 
