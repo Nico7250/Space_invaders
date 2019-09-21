@@ -57,7 +57,7 @@ public class Bullet {
 }
 
 // Detects collision between alien and player shot
-void bulletDetect() {
+void bulletDetectAlienHit() {
   for (int i = bullets.size() -1; i >= 0; i--) { // Using a decrementing loop / counting backwards to -
     Bullet bullet = bullets.get(i);              // - avoid infinity loop due to how arrayList works
     for (int j = aliens.size() -1; j >= 0; j--) {
