@@ -34,11 +34,11 @@ void setup() {
   rules = new Rules();
   createFleet();
   createStars();
-  /*mainMusic = new SoundFile(this, "Space_Invaders.mp3");
+  /*mainMusic = new SoundFile(this, "../Resources/Space_Invaders.mp3");
    if (stage == 0){
    mainMusic.play();
    }
-   if (stage == 1) {
+   if (stage != 0) {
    mainMusic.stop();
    }*/
 }

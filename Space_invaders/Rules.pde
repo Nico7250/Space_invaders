@@ -22,10 +22,13 @@ public class Rules {
 
   void winLoseCondition() {
     if (score1 >= 1000) {
-      println("you Win");
       stage = 6;
+      rules.score1 = 0;
+      alien.removeAll();
     } if (player.health == 0 || player2.health == 0){
+      alien.removeAll();
       stage = 7;
+      
     }
   }
 

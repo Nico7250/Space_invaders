@@ -75,6 +75,13 @@ public class Alien {
       }
     }
   }
+  
+    void removeAll() {
+    for (int i = aliens.size() -1; i >= 0; i--) {
+      Alien alien = aliens.get(i);
+      aliens.remove(i);
+    }
+  }
 }
 
 
