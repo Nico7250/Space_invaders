@@ -44,20 +44,11 @@ void keyPressed() {
   if (key == 's') {
     player2Down = true;
   }
-  if (key == '<') {
+  if (key == 'q') {
     player2Shoot = true;
-  }
-  if (key == 'o' || key == 'O') {
-    stage = 0;
   }
   if (keyCode == BACKSPACE) {
     stage = 0;
-  }
-  if (key == 'k' || key == 'K') {
-    stage = 2;
-  }
-  if (key == 'l' || key == 'L') {
-    stage = 3;
   }
 }
 
@@ -91,7 +82,7 @@ void keyReleased() {
   if (key == 's') {
     player2Down = false;
   }
-  if (key == '<') {
+  if (key == 'q') {
     player2Shoot = false;
   }
 }
