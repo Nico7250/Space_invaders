@@ -53,20 +53,3 @@ public class Bullet {
     }
   }
 }
-
-// Detects collision between alien and player shot
-void bulletDetectAlienHit() {
-  for (int i = bullets.size() -1; i >= 0; i--) { // Using a decrementing loop / counting backwards to -
-    Bullet bullet = bullets.get(i);              // - avoid infinity loop due to how arrayList works
-    for (int j = aliens.size() -1; j >= 0; j--) {
-      Alien alien = aliens.get(j);
-      float d = dist(alien.alienLocX, alien.alienLocY, bullet.position.x, bullet.position.y);
-      if (d < 20 + 20) {
-        bullets.remove(i);
-        aliens.remove(j);
-        rules.score1 += 100; // Increses score everytime an alien is killed
-        alien.moveSpeedUp(); // Increses the movement speed of all aliens when alien is killed
-      }
-    }
-  }
-}

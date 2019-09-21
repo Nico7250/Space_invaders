@@ -89,7 +89,7 @@ void stage4() {
 
   bullet.shoot(player1Shoot, player.position.x, player.position.y);
   bullet.deleteBulletOutOfBound();
-  bulletDetectAlienHit();
+  alien.bulletDetectHit();
   player.playerHit();
 
   rules.calculateScore();
@@ -137,7 +137,7 @@ void stage5() {
   bullet.shoot(player2Shoot, player2.position.x, player2.position.y);
   bullet.shoot(player1Shoot, player.position.x, player.position.y);
   bullet.deleteBulletOutOfBound();
-  bulletDetectAlienHit();
+  alien.bulletDetectHit();
   player.playerHit();
   player2.playerHit();
 

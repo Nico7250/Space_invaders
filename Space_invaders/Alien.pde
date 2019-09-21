@@ -58,6 +58,23 @@ public class Alien {
       }
     }
   }
+
+  // Detects collision between alien and player shot
+  void bulletDetectHit() {
+    for (int i = bullets.size() -1; i >= 0; i--) { // Using a decrementing loop / counting backwards to -
+      Bullet bullet = bullets.get(i);              // - avoid infinity loop due to how arrayList works
+      for (int j = aliens.size() -1; j >= 0; j--) {
+        Alien alien = aliens.get(j);
+        float d = dist(alien.alienLocX, alien.alienLocY, bullet.position.x, bullet.position.y);
+        if (d < 20 + 20) {
+          bullets.remove(i);
+          aliens.remove(j);
+          rules.score1 += 100; // Increses score everytime an alien is killed
+          alien.moveSpeedUp(); // Increses the movement speed of all aliens when alien is killed
+        }
+      }
+    }
+  }
 }
 
 
@@ -69,8 +86,6 @@ int getNumberAliensX() {
   int alienWidth = width/18;
   int avalibleSpaceX = width -2 *alienWidth;
   int numberAliensX = (avalibleSpaceX /(2 * alienWidth));
-
-  println("alien numbere x" + numberAliensX);
   return numberAliensX;
 }
 
@@ -94,7 +109,6 @@ void createAlien(int alienNumber, int rowNumber) {
   int alienY = alienHeight +2 * alienHeight * rowNumber;
   alien.alienLocY = alienY;
   alien.alienLocX = alienX;
-  println(alienNumber);
   aliens.add(alien);
 }
 
