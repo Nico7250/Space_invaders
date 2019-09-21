@@ -28,7 +28,7 @@ void setup() {
 
   player = new Player("spaceShip.png", width/2, height);
   player2 = new Player("spaceShip2.png", width/4, height);
-  bullet = new Bullet(player, player.spaceShipX, player.spaceShipY);
+  bullet = new Bullet(player, player.position.x, player.position.y);
   rules = new Rules();
   createFleet();
   createStars();
@@ -49,12 +49,11 @@ void draw() {
     stage1();
   } else if (stage == 2) {
     stage2();
-  }
-  else if (stage == 3){
-   stage3(); 
-  }else if (stage == 4){
-   stage4(); 
-  }else if (stage == 5){
+  } else if (stage == 3) {
+    stage3();
+  } else if (stage == 4) {
+    stage4();
+  } else if (stage == 5) {
     stage5();
   }
 }

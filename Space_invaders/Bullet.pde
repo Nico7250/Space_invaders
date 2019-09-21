@@ -4,19 +4,17 @@ int bulletDelay = 250; // The delay between shots
 // Uses Player as parent, this is used for calculation of bullet spawn location
 public class Bullet {
   PImage playerBullet;
-  float playerBulletX;
-  float playerBulletY;
+  PVector position;
   Player parent;
 
   Bullet(Player p, float x, float y) {
     parent = p;
     playerBullet = loadImage("PlayerBullet.png");
-    playerBulletX = x ;
-    playerBulletY = y;
+    position = new PVector(x, y);
   }
 
   void move() {
-    playerBulletY -= 3;
+    position.y -= 3;
   }
 
   // Adds a bullet to the arraylist bullets
@@ -41,7 +39,7 @@ public class Bullet {
   void displayBullet() {
     imageMode(CENTER);
     playerBullet.resize(24, 38);
-    image(playerBullet, playerBulletX, playerBulletY);
+    image(playerBullet, position.x, position.y);
   }
 
   // Deletes bullets when out of screen so that the game wont lagg as much and eventually crash
@@ -49,7 +47,7 @@ public class Bullet {
     Iterator<Bullet> shoot = bullets.iterator();
     while (shoot.hasNext()) {
       Bullet b = shoot.next();
-      if (b.playerBulletY <=1) {
+      if (b.position.y <=1) {
         shoot.remove();
       }
     }
@@ -62,7 +60,7 @@ void bulletDetectAlienHit() {
     Bullet bullet = bullets.get(i);              // - avoid infinity loop due to how arrayList works
     for (int j = aliens.size() -1; j >= 0; j--) {
       Alien alien = aliens.get(j);
-      float d = dist(alien.alienLocX, alien.alienLocY, bullet.playerBulletX, bullet.playerBulletY);
+      float d = dist(alien.alienLocX, alien.alienLocY, bullet.position.x, bullet.position.y);
       if (d < 20 + 20) {
         bullets.remove(i);
         aliens.remove(j);

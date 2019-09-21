@@ -37,19 +37,19 @@ void stage1() {
   displayButton("Back", width/2, height/1.25, 0, 0, 128);
 }
 
-void stage2(){
+void stage2() {
   createMenuBackground();
   displayButton("Easy", width/2, height/3, 0, 0, 128);
   displayButton ("Hard", width/2, height /1.75, 0, 0, 128);
   displayButton("Extreme", width/2, height /1.25, 0, 0, 128);
 }
 
-void stage3(){
+void stage3() {
   createMenuBackground();
-  line(width/2,height/1.001,width/2,height/1000);
-  displayButton("Back", width/15, height/1.05,0,0,128);
+  line(width/2, height/1.001, width/2, height/1000);
+  displayButton("Back", width/15, height/1.05, 0, 0, 128);
   textAlign(CENTER);
-  fill(50,200,100);
+  fill(50, 200, 100);
   textSize(46);
   text("How To Play", width/2, height /12);
   textSize(32);
@@ -58,7 +58,7 @@ void stage3(){
   text("Movement: Arrow Keys", width/5, height/6);
   text("Interact/shoot: SPACEBAR", width/5, height/4.5);
   textSize(32);
-  text("Player 2:",width/1.25,height/7.5);
+  text("Player 2:", width/1.25, height/7.5);
   textSize(25);
   text("Movement: W, A, S, D", width/1.25, height/6);
   text("Interact/shoot: CTRL", width/1.25, height/4.5);
@@ -87,7 +87,7 @@ void stage4() {
   player.movePlayer1();
   player.playerConstrain();
 
-  bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
+  bullet.shoot(player1Shoot, player.position.x, player.position.y);
   bullet.deleteBulletOutOfBound();
   bulletDetectAlienHit();
   player.playerHit();
@@ -132,10 +132,10 @@ void stage5() {
   player2.playerConstrain();
   player2.displayPlayer2();
   player2.movePlayer2();
- // player2.player2Constrain();
+  // player2.player2Constrain();
 
-  bullet.shoot(player2Shoot, player2.spaceShipX, player2.spaceShipY);
-  bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
+  bullet.shoot(player2Shoot, player2.position.x, player2.position.y);
+  bullet.shoot(player1Shoot, player.position.x, player.position.y);
   bullet.deleteBulletOutOfBound();
   bulletDetectAlienHit();
   player.playerHit();
@@ -173,7 +173,7 @@ void createMenuBackground() {
   displayStars();
 }
 
-void createBackground(){
+void createBackground() {
   background(0);
   displayStars();
 }
