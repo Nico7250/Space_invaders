@@ -90,6 +90,7 @@ void stage4() {
   bullet.shoot(player1Shoot, player.spaceShipX, player.spaceShipY);
   bullet.deleteBulletOutOfBound();
   bulletDetect();
+  playerHit();
 
   rules.calculateScore();
   rules.winCondition();
