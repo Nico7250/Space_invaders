@@ -20,11 +20,12 @@ public class Rules {
     score1 += millis()/60/60;
   }
 
-  void winCondition() {
-    if (score1 >= 10000) {
+  void winLoseCondition() {
+    if (score1 >= 1000) {
       println("you Win");
+      stage = 6;
     } if (player.health == 0 || player2.health == 0){
-      stage = 0;
+      stage = 7;
     }
   }
 

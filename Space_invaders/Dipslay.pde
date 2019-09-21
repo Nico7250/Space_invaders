@@ -78,7 +78,7 @@ void stage4() {
   player.playerHit();
 
   rules.calculateScore();
-  rules.winCondition();
+  rules.winLoseCondition();
 
   if (alien.levelUp()) {
     if (aliens.size() == 0) {
@@ -125,7 +125,7 @@ void stage5() {
 
 
   rules.calculateScore();
-  rules.winCondition();
+  rules.winLoseCondition();
 
   if (alien.levelUp()) {
     if (aliens.size() == 0) {
@@ -136,6 +136,21 @@ void stage5() {
       }
     }
   }
+}
+
+void stage6() {
+  PImage win;
+  createMenuBackground();
+  win = loadImage("youWin.png");
+  image(win, width / 2, height /2);
+}
+
+void stage7(){
+  PImage lose;
+  createMenuBackground();
+  lose = loadImage("youLose.png");
+  image(lose, width/2, height /2);
+  
 }
 
 
