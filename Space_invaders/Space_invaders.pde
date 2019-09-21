@@ -17,6 +17,7 @@ float[] stars3 = new float [1000];
 
 ArrayList <Alien> aliens;
 ArrayList <Bullet> bullets;
+//ArrayList <Bullet> bulletsPlayer2;
 
 
 void setup() {
@@ -25,6 +26,7 @@ void setup() {
 
   aliens = new ArrayList<Alien>();
   bullets = new ArrayList<Bullet>();
+  //bulletsPlayer2 = new ArrayList<Bullet>();
 
   player = new Player("spaceShip.png", width/2, height);
   player2 = new Player("spaceShip2.png", width/4, height);

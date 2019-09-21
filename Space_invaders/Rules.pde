@@ -23,11 +23,13 @@ public class Rules {
   void winCondition() {
     if (score1 >= 10000) {
       println("you Win");
+    } if (player.health == 0 || player2.health == 0){
+      stage = 0;
     }
   }
 
   void powerUp() {
-    if (millis() % 78 == 0) {
+    if (frameCount % 78 == 0) {
       ellipse(x, y, 8, 8);
       while (y < height) {
         y --;

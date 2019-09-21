@@ -68,6 +68,7 @@ void stage4() {
   textSize(32);
   text(frameRate, width/1.05, height/1.03);
 
+  //rules.powerUp();
   player.displayPlayer();
   player.movePlayer1();
   player.playerConstrain();

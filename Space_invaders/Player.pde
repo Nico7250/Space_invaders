@@ -3,6 +3,7 @@ public class Player {
   PImage spaceShip2;
   public PVector position;
   int shipMoveSpeed;
+  int health;
 
   // With the PImage as a input string, it is possible to make 2 players with different spaceships
   Player(String playerImage, float x, float y) {
@@ -11,6 +12,7 @@ public class Player {
     spaceShip2 = loadImage(playerImage);
     position = new PVector(x, y);
     shipMoveSpeed = 5;
+    health = 3;
   }
 
   // Moves spaceship on the x and y-axis, also possible to move diagonally
@@ -72,8 +74,9 @@ public class Player {
       Alien alien = aliens.get(i);
       float d = dist(position.x, position.y, alien.alienLocX, alien.alienLocY);
       if (d < 40 + 40) {
-        aliens.remove(i);
+        //aliens.remove(i);
         println("kaboom");
+        health --;
       }
     }
   }
