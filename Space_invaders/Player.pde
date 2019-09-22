@@ -9,6 +9,8 @@ public class Player {
   int akeyUp;
   int akeyDown;
   int akeyShoot;
+  int scalex;
+  int scaley;
   PImage spaceShip;
   PImage spaceShip2;
   PVector position;
@@ -20,13 +22,14 @@ public class Player {
   String bulletImage;
 
   // With the PImage as a input string, it is possible to make 2 players with different spaceships
-  Player(String playerImage, float x, float y, String bulletimage) {
+  Player(String playerImage, float x, float y,int px, int py, String bulletimage) {
 
     spaceShip = loadImage(playerImage);
-    spaceShip2 = loadImage(playerImage);
     position = new PVector(x, y);
     bullets = new ArrayList<Bullet>();
     bulletImage = bulletimage;
+    scalex = px;
+    scaley = py;
   }
 
   void setActionKeys(int left, int right, int up, int down, int shoot)
@@ -100,19 +103,19 @@ public class Player {
       bullet.move();
     }
   }
-  void removeAllBullets() {
+  void removeAllBullets() { //<>//
     for (int i = bullets.size() -1; i >= 0; i--) {
       //Bullet bullet = bullets.get(i);
-      bullets.remove(i); //<>//
+      bullets.remove(i);
     }
   }
   // Deletes bullets when out of screen so that the game wont lagg as much and eventually crash
   void deleteBulletOutOfBound() {
     Iterator<Bullet> shoot = bullets.iterator();
-    while (shoot.hasNext()) {
+    while (shoot.hasNext()) { //<>//
       Bullet b = shoot.next();
       if (b.position.y <=1) {
-        shoot.remove(); //<>//
+        shoot.remove();
       }
     }
   }
@@ -130,15 +133,11 @@ public class Player {
     position.x = constrain(position.x, 60, width-60);
     position.y = constrain(position.y, height-height/6, height-60);
   }
-  void displayPlayer2() {
-    imageMode(CENTER);
-    spaceShip2.resize(118, 115);
-    image(spaceShip2, position.x, position.y);
-  }
+ 
   // Displays player
   void displayPlayer() {
     imageMode(CENTER);
-    spaceShip.resize(120, 97);
+    spaceShip.resize(scalex, scaley);
     image(spaceShip, position.x, position.y);
   }
 

@@ -115,10 +115,11 @@ void stage5() {
 }
 
 void stage6() {
-  PImage win;
+  /*PImage win;
   createMenuBackground();
   win = loadImage("../Resources/youWin.png");
-  image(win, width / 2, height /2);
+  image(win, width / 2, height /2);*/
+  alien.levelUp();
 }
 
 void stage7() {
