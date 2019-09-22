@@ -130,11 +130,9 @@ int getNumberRows() {
   return numberRows;
 }
 
-//long bulletTimer;
-//int bulletDelay = 250;
+
 int GetAlienToShoot() {
-  if (/*millis() - bulletTimer >= bulletDelay*/frameCount % 100 == 0) { // Calculates delay between shots
-    //bulletTimer = millis();
+  if (frameCount % 75 == 0) { // Calculates delay between shots
     return (int)random(0, aliens.size());
   }
   return -1;
