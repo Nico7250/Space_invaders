@@ -15,6 +15,7 @@ public class Alien {
     moveSpeed = 1.5;
     moveSpeed2 = 3.5;
     moveSpeed3 = 7.5;
+    alienBullets = new ArrayList<Bullet>();
   }
 
   void displayAlien() {
@@ -60,7 +61,16 @@ public class Alien {
   }
 
   void alienShoot() {
-    GetAlienToShoot();
+      Bullet bullet = new Bullet(alienLocX, alienLocY+10, -5, "../Resources/bullet2.png"); // Spawns bullet at spaceShip location //<>//
+      alienBullets.add(bullet);
+  }
+  
+  void displayBullets()
+  {
+    for (Bullet bullet : alienBullets) {
+      bullet.displayBullet();
+      bullet.move();
+    }
   }
 
   boolean playerDetectHit(Player player)
@@ -68,7 +78,8 @@ public class Alien {
     for (int i = alienBullets.size()-1; i>=0; i--) {
       Bullet bullet = alienBullets.get(i);     
       float d = dist(player.position.x, player.position.y, bullet.position.x, bullet.position.y);
-      if (d < 20 + 50) {
+      if (d < 20 + 30) {
+        alienBullets.remove(i);
         return true;
       }
     }
@@ -121,8 +132,14 @@ int getNumberRows() {
   return numberRows;
 }
 
+//long bulletTimer;
+//int bulletDelay = 250;
 int GetAlienToShoot() {
-  return (int)random(0, aliens.size());
+  if (/*millis() - bulletTimer >= bulletDelay*/frameCount % 15 == 0) { // Calculates delay between shots
+      //bulletTimer = millis(); //<>//
+        return (int)random(0, aliens.size());
+    }
+  return -1; //<>//
 }
 
 void createAlien(int alienNumber, int rowNumber) {

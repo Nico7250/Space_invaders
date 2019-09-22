@@ -59,8 +59,19 @@ void stage4() {
 
   for (Alien alien : aliens) {
     alien.displayAlien();
+    //alien.alienShoot();
     alien.alienMove();
+    alien.displayBullets();
+    for (Player player : players) {
+      if (alien.playerDetectHit(player)){
+        player.health--;
+        println("Hit");
+      }
+    }
   }
+  int alientoshoot = GetAlienToShoot();
+  if(alientoshoot>-1)
+    aliens.get(alientoshoot).alienShoot(); //<>//
   text("Player 1 Score:" + rules.score1, width/10, height/10);
   text("Player 2 Score:" + rules.score2, width/1.1, height/10);
   textAlign(CENTER);
@@ -81,7 +92,7 @@ void stage4() {
   }
 
   rules.powerUp();
-  rules.calculateScore();
+  rules.calculateScore(); //<>//
   rules.winLoseCondition();
 
   if (alien.levelUp()) {
@@ -92,7 +103,7 @@ void stage4() {
       //player.removeAllBullets();
       createFleet();
       for (Alien alien : aliens) {
-        alien.moveSpeed *= 2; //<>//
+        alien.moveSpeed *= 2;
       }
     }
   }
