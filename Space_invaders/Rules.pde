@@ -26,10 +26,19 @@ public class Rules {
       rules.score1 = 0;
       alien.removeAll();
     } 
-    if (player.health == 0 || player2.health == 0) {
-      alien.removeAll();
-      stage = 7;
-    }
+    for (Player player : players) {
+      if(player.health==0)
+      {
+        alien.removeAll();
+        stage=7;
+      }
+      player.removeAllBullets();
+    }      
+
+ //   if (player.health == 0 || player2.health == 0) {
+//      alien.removeAll();
+//      stage = 7;
+  //  }
   }
 
   void powerUp() {

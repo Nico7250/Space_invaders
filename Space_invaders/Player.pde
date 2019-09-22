@@ -1,4 +1,14 @@
 public class Player {
+  boolean left;
+  boolean right;
+  boolean up;
+  boolean down;
+  boolean shoot;
+  int akeyLeft;
+  int akeyRight; 
+  int akeyUp;
+  int akeyDown;
+  int akeyShoot;
   PImage spaceShip;
   PImage spaceShip2;
   PVector position;
@@ -19,8 +29,53 @@ public class Player {
     bulletImage = bulletimage;
   }
 
+  void setActionKeys(int left, int right, int up, int down, int shoot)
+  {
+    akeyLeft = left;
+    akeyRight = right;
+    akeyUp = up;
+    akeyDown = down;
+    akeyShoot = shoot;
+  }
+  
+  void pkeyReleased(int rKeycode) {
+  
+  if (rKeycode==akeyLeft) { //<>//
+    left = false;
+  }
+  if (rKeycode==akeyRight) {
+    right = false;
+  }
+  if (rKeycode==akeyUp) {
+    up = false;
+  }
+  if (rKeycode==akeyDown) {
+    down = false;
+  }
+  if (rKeycode==akeyShoot) {
+    shoot = false;
+  }
+}
+
+ void pkeyPressed(int rKeycode) { //<>//
+  if (rKeycode==akeyLeft) {
+    left = true;
+  }
+  if (rKeycode==akeyRight) {
+    right = true;
+  }
+  if (rKeycode==akeyUp) {
+    up = true;
+  }
+  if (rKeycode==akeyDown) {
+    down = true;
+  }
+  if (rKeycode==akeyShoot) {
+    shoot = true;
+  }
+}
   // Moves spaceship on the x and y-axis, also possible to move diagonally
-  void movePlayer(boolean left, boolean right, boolean up, boolean down, boolean shoot) {
+  void movePlayer() {
     if (left) {
       position.x += -shipMoveSpeed;
     }
@@ -56,7 +111,7 @@ public class Player {
     Iterator<Bullet> shoot = bullets.iterator();
     while (shoot.hasNext()) {
       Bullet b = shoot.next();
-      if (b.position.y <=200) {
+      if (b.position.y <=1) {
         shoot.remove();
       }
     }

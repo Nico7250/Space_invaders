@@ -13,39 +13,11 @@ boolean player2Shoot;
 
 // Checks for key pressed and makes boolean variable true
 void keyPressed() {
-
-  if (keyCode == LEFT) {
-    player1Left = true;
-  }
-  if (keyCode == RIGHT) {
-    player1Right = true;
-  }
-  if (keyCode == UP) {
-    player1Up = true;
-  }
-  if (keyCode == DOWN) {
-    player1Down = true;
+  for (Player player : players) {
+    player.pkeyPressed(keyCode);
   }
   if (keyCode == ESC) {
     exit();
-  }
-  if (key == ' ') {
-    player1Shoot = true;
-  }
-  if (key == 'a') {
-    player2Left = true;
-  }
-  if (key == 'd') {
-    player2Right = true;
-  }
-  if (key == 'w') {
-    player2Up = true;
-  }
-  if (key == 's') {
-    player2Down = true;
-  }
-  if (key == 'q') {
-    player2Shoot = true;
   }
   if (keyCode == BACKSPACE) {
     stage = 0;
@@ -54,36 +26,8 @@ void keyPressed() {
 
 // Checks for key released and makes boolean variable false
 void keyReleased() {
-
-  if (keyCode == LEFT) {
-    player1Left = false;
-  }
-  if (keyCode == RIGHT) {
-    player1Right = false;
-  }
-  if (keyCode == UP) {
-    player1Up = false;
-  }
-  if (keyCode == DOWN) {
-    player1Down = false;
-  }
-  if (key == ' ') {
-    player1Shoot = false;
-  }
-  if (key == 'a') {
-    player2Left = false;
-  }
-  if (key == 'd') {
-    player2Right = false;
-  }
-  if (key == 'w') {
-    player2Up = false;
-  }
-  if (key == 's') {
-    player2Down = false;
-  }
-  if (key == 'q') {
-    player2Shoot = false;
+  for (Player player : players) {
+    player.pkeyReleased(keyCode);
   }
 }
 

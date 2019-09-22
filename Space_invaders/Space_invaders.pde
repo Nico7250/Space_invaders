@@ -3,8 +3,8 @@ import java.util.Iterator;
 
 
 Alien alien;
-Player player;
-Player player2;
+//Player player;
+//Player player2;
 //Bullet bullet;
 Rules rules;
 
@@ -16,6 +16,7 @@ float[] stars2 = new float[1000];
 float[] stars3 = new float [1000];
 
 ArrayList <Alien> aliens;
+ArrayList <Player> players;
 //ArrayList <Bullet> bullets;
 //ArrayList <Bullet> bulletsPlayer2;
 
@@ -25,11 +26,17 @@ void setup() {
   frameRate(60);
 
   aliens = new ArrayList<Alien>();
+  players = new ArrayList<Player>();
   //bullets = new ArrayList<Bullet>();
   //bulletsPlayer2 = new ArrayList<Bullet>();
+  Player player =new Player("../Resources/spaceShip.png", width/2, height, null);
+  player.setActionKeys(LEFT,RIGHT,UP,DOWN,32);
+  players.add(player);
+  player =new Player("../Resources/spaceShip2.png", width/4, height, null);
+  player.setActionKeys((int) 'A',(int)'D',(int)'W',(int)'S',(int)'Q');
+  players.add(player);
 
-  player = new Player("../Resources/spaceShip.png", width/2, height, null);
-  player2 = new Player("../Resources/spaceShip2.png", width/4, height, null);
+  //players.add(new Player("../Resources/spaceShip2.png", width/4, height, null));
   //bullet = new Bullet(player.position.x, player.position.y);
   rules = new Rules();
   createFleet();

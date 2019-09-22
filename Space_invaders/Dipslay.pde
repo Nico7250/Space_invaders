@@ -52,7 +52,10 @@ void stage3() {
 
 void stage4() {
   createBackground();
-  player.displayBullets();
+  for (Player player : players) {
+    player.displayBullets();
+  }
+  // player.displayBullets();
 
   for (Alien alien : aliens) {
     alien.displayAlien();
@@ -65,13 +68,22 @@ void stage4() {
   text(frameRate, width/1.05, height/1.03);
 
   //rules.powerUp();
-  player.displayPlayer();
-  player.movePlayer(player1Left, player1Right, player1Up, player1Down, player1Shoot);
-  player.playerConstrain();
+  for (Player player : players) {
+    player.displayPlayer();
+    player.movePlayer();
+    player.playerConstrain();
 
-  player.deleteBulletOutOfBound();
-  alien.bulletDetectHit(player.bullets);
-  player.playerHit();
+    player.deleteBulletOutOfBound();
+    alien.bulletDetectHit(player.bullets);
+    player.playerHit();
+  }
+  //  player.displayPlayer();
+  //  player.movePlayer(player1Left, player1Right, player1Up, player1Down, player1Shoot);
+  //  player.playerConstrain();
+
+  //  player.deleteBulletOutOfBound();
+  //alien.bulletDetectHit(player.bullets);
+  //player.playerHit();
 
   rules.powerUp();
   rules.calculateScore();
@@ -79,7 +91,10 @@ void stage4() {
 
   if (alien.levelUp()) {
     if (aliens.size() == 0) {
-      player.removeAllBullets();
+      for (Player player : players) {
+        player.removeAllBullets();
+      }      
+      //player.removeAllBullets();
       createFleet();
       for (Alien alien : aliens) {
         alien.moveSpeed *= 2;
@@ -89,8 +104,9 @@ void stage4() {
 }
 
 
-
 void stage5() {
+  stage4();
+  /*
   createBackground();
 
   player.displayBullets();
@@ -134,6 +150,7 @@ void stage5() {
       }
     }
   }
+*/
 }
 
 void stage6() {
