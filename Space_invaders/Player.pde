@@ -16,39 +16,21 @@ public class Player {
   }
 
   // Moves spaceship on the x and y-axis, also possible to move diagonally
-  void movePlayer1() {
-    if (player1Left) {
+  void movePlayer(boolean left, boolean right, boolean up, boolean down, boolean shoot) {
+    if (left) {
       position.x += -shipMoveSpeed;
     }
-    if (player1Right) {
+    if (right) {
       position.x += shipMoveSpeed;
     }
-    if (player1Up) {
+    if (up) {
       position.y += -shipMoveSpeed;
     }
-    if (player1Down) {
+    if (down) {
       position.y += shipMoveSpeed;
     }
-    if (player1Shoot){
+    if (shoot){
       bullet.shoot(position.x, position.y);
-    }
-  }
-
-  void movePlayer2() {
-    if (player2Left) {
-      position.x += -shipMoveSpeed;
-    }
-    if (player2Right) {
-      position.x += shipMoveSpeed;
-    }
-    if (player2Up) {
-      position.y += -shipMoveSpeed;
-    }
-    if (player2Down) {
-      position.y += shipMoveSpeed;
-    }
-    if (player2Shoot){
-       bullet.shoot(position.x, position.y);
     }
   }
 

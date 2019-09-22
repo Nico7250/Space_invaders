@@ -70,7 +70,7 @@ void stage4() {
 
   //rules.powerUp();
   player.displayPlayer();
-  player.movePlayer1();
+  player.movePlayer(player1Left, player1Right, player1Up, player1Down, player1Shoot);
   player.playerConstrain();
 
   bullet.deleteBulletOutOfBound();
@@ -112,11 +112,11 @@ void stage5() {
   text(frameRate, width/1.05, height/1.03);
 
   player.displayPlayer();
-  player.movePlayer1();
+  player.movePlayer(player1Left, player1Right, player1Up, player1Down, player1Shoot);
   player.playerConstrain();
   player2.playerConstrain();
   player2.displayPlayer2();
-  player2.movePlayer2();
+  player2.movePlayer(player2Left, player2Right, player2Up, player2Down, player2Shoot);
 
   bullet.deleteBulletOutOfBound();
   alien.bulletDetectHit();
