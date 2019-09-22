@@ -6,7 +6,7 @@ public class Alien {
   float moveSpeed;
   float moveSpeed2;
   float moveSpeed3;
-
+  ArrayList <Bullet> alienBullets;
   Alien(float x, float y) {
     alien = loadImage("../Resources/alien.png");
     alienLocX = x;
@@ -59,6 +59,21 @@ public class Alien {
     }
   }
 
+  void alienShoot() {
+    GetAlienToShoot();
+  }
+
+  boolean playerDetectHit(Player player)
+  {
+    for (int i = alienBullets.size()-1; i>=0; i--) {
+      Bullet bullet = alienBullets.get(i);     
+      float d = dist(player.position.x, player.position.y, bullet.position.x, bullet.position.y);
+      if (d < 20 + 50) {
+        return true;
+      }
+    }
+    return false;
+  }
   // Detects collision between alien and player shot
   void bulletDetectHit(ArrayList <Bullet> bullets) {
     for (int i = bullets.size() -1; i >= 0; i--) { // Using a decrementing loop / counting backwards to -
@@ -106,6 +121,9 @@ int getNumberRows() {
   return numberRows;
 }
 
+int GetAlienToShoot() {
+  return (int)random(0, aliens.size());
+}
 
 void createAlien(int alienNumber, int rowNumber) {
   int alienWidth = width/18;

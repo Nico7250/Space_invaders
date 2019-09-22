@@ -27,18 +27,13 @@ public class Rules {
       alien.removeAll();
     } 
     for (Player player : players) {
-      if(player.health==0)
+      if (player.health==0)
       {
         alien.removeAll();
         stage=7;
+        player.removeAllBullets();
       }
-      player.removeAllBullets();
     }      
-
- //   if (player.health == 0 || player2.health == 0) {
-//      alien.removeAll();
-//      stage = 7;
-  //  }
   }
 
   void powerUp() {

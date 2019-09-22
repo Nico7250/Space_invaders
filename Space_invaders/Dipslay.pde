@@ -74,16 +74,11 @@ void stage4() {
     player.playerConstrain();
 
     player.deleteBulletOutOfBound();
+    if(alien.playerDetectHit(player))
+      player.health--;
     alien.bulletDetectHit(player.bullets);
     player.playerHit();
   }
-  //  player.displayPlayer();
-  //  player.movePlayer(player1Left, player1Right, player1Up, player1Down, player1Shoot);
-  //  player.playerConstrain();
-
-  //  player.deleteBulletOutOfBound();
-  //alien.bulletDetectHit(player.bullets);
-  //player.playerHit();
 
   rules.powerUp();
   rules.calculateScore();
@@ -97,7 +92,7 @@ void stage4() {
       //player.removeAllBullets();
       createFleet();
       for (Alien alien : aliens) {
-        alien.moveSpeed *= 2;
+        alien.moveSpeed *= 2; //<>//
       }
     }
   }
@@ -106,51 +101,6 @@ void stage4() {
 
 void stage5() {
   stage4();
-  /*
-  createBackground();
-
-  player.displayBullets();
-  player2.displayBullets();
-
-  for (Alien alien : aliens) {
-    alien.displayAlien();
-    alien.alienMove();
-  }
-  text("Player 1 Score:" + rules.score1, width/10, height/10);
-  text("Player 2 Score:" + rules.score2, width/1.1, height/10);
-  textAlign(CENTER);
-  textSize(32);
-  text(frameRate, width/1.05, height/1.03);
-
-  player.displayPlayer();
-  player.movePlayer(player1Left, player1Right, player1Up, player1Down, player1Shoot);
-  player.playerConstrain();
-  player2.playerConstrain();
-  player2.displayPlayer2();
-  player2.movePlayer(player2Left, player2Right, player2Up, player2Down, player2Shoot);
-
-  player.deleteBulletOutOfBound();
-  player2.deleteBulletOutOfBound();
-  alien.bulletDetectHit(player.bullets);
-  alien.bulletDetectHit(player2.bullets);
-  player.playerHit();
-  player2.playerHit();
-
-
-  rules.calculateScore();
-  rules.winLoseCondition();
-
-  if (alien.levelUp()) {
-    if (aliens.size() == 0) {
-      player.removeAllBullets();
-      player2.removeAllBullets();
-      createFleet();
-      for (Alien alien : aliens) {
-        alien.moveSpeed *= 2;
-      }
-    }
-  }
-*/
 }
 
 void stage6() {

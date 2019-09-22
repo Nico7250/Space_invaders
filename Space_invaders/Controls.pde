@@ -49,9 +49,20 @@ void mousePressed() {
     float detect1Player = dist(mouseX, mouseY, width/2, height/3);
     if (detect1Player < (buttonSizeX/2.5) + (buttonSizeY/2.5)) {
       stage = 4;
+      players = new ArrayList<Player>();
+      Player player =new Player("../Resources/spaceShip.png", width/2, height, null);
+      player.setActionKeys(LEFT, RIGHT, UP, DOWN, 32);
+      players.add(player);
     }
     float detect2Player = dist(mouseX, mouseY, width/2, height/1.75);
     if (detect2Player < (buttonSizeX/2.5) + (buttonSizeY/2.5)) {
+      players = new ArrayList<Player>();
+      Player player =new Player("../Resources/spaceShip.png", width/2, height, null);
+      player.setActionKeys(LEFT, RIGHT, UP, DOWN, 32);
+      players.add(player);
+      player =new Player("../Resources/spaceShip2.png", width/4, height,null /*"player2Bullet.png"*/);
+      player.setActionKeys((int) 'A', (int)'D', (int)'W', (int)'S', (int)'Q');
+      players.add(player);      
       stage = 5;
     }
     float detectBack = dist(mouseX, mouseY, width/2, height/1.25);
