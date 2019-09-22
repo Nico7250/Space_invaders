@@ -21,7 +21,7 @@ public class Rules {
   }
 
   void winLoseCondition() {
-    if (score1 >= 10000) {
+    if (score1 >= 50000) {
       stage = 6;
       rules.score1 = 0;
       alien.removeAll();

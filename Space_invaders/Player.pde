@@ -15,6 +15,7 @@ public class Player {
   PImage spaceShip2;
   PVector position;
   int shipMoveSpeed = 5;
+  int score = 0;
   int health = 3;
   ArrayList <Bullet> bullets;
   long bulletTimer; // Used in calculation for bullet delay
@@ -102,8 +103,8 @@ public class Player {
       bullet.displayBullet();
       bullet.move();
     }
-  }
-  void removeAllBullets() { //<>//
+  } //<>//
+  void removeAllBullets() {
     for (int i = bullets.size() -1; i >= 0; i--) {
       //Bullet bullet = bullets.get(i);
       bullets.remove(i);
@@ -111,8 +112,8 @@ public class Player {
   }
   // Deletes bullets when out of screen so that the game wont lagg as much and eventually crash
   void deleteBulletOutOfBound() {
-    Iterator<Bullet> shoot = bullets.iterator();
-    while (shoot.hasNext()) { //<>//
+    Iterator<Bullet> shoot = bullets.iterator(); //<>//
+    while (shoot.hasNext()) {
       Bullet b = shoot.next();
       if (b.position.y <=1) {
         shoot.remove();

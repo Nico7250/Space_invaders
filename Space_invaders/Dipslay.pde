@@ -72,13 +72,11 @@ void stage4() {
   int alientoshoot = GetAlienToShoot();
   if(alientoshoot>-1)
     aliens.get(alientoshoot).alienShoot(); //<>//
-  text("Player 1 Score:" + rules.score1, width/10, height/10);
-  text("Player 2 Score:" + rules.score2, width/1.1, height/10);
+  text("Score:" + rules.score1, width/10, height/10);
   textAlign(CENTER);
   textSize(32);
   text(frameRate, width/1.05, height/1.03);
 
-  //rules.powerUp();
   for (Player player : players) {
     player.displayPlayer();
     player.movePlayer();
@@ -91,11 +89,10 @@ void stage4() {
     player.playerHit();
   }
 
-  rules.powerUp();
-  rules.calculateScore(); //<>//
+  rules.calculateScore();
   rules.winLoseCondition();
 
-  if (alien.levelUp()) {
+  if (alien.levelUp()) { //<>//
     if (aliens.size() == 0) {
       for (Player player : players) {
         player.removeAllBullets();
@@ -115,11 +112,10 @@ void stage5() {
 }
 
 void stage6() {
-  /*PImage win;
+  PImage win;
   createMenuBackground();
   win = loadImage("../Resources/youWin.png");
-  image(win, width / 2, height /2);*/
-  alien.levelUp();
+  image(win, width / 2, height /2);
 }
 
 void stage7() {
