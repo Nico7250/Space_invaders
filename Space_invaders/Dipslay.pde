@@ -1,6 +1,6 @@
 int buttonSizeX = 250; //<>//
 int buttonSizeY = 100;
-PImage player1;
+//PImage player1;
 
 void stage0() {
   createMenuBackground();
@@ -47,7 +47,6 @@ void stage3() {
   textSize(25);
   text("Movement: W, A, S, D", width/1.25, height/6);
   text("Interact/shoot: CTRL", width/1.25, height/4.5);
-  player1 = loadImage("spaceShip.png");
 }
 
 void stage4() {
@@ -55,17 +54,14 @@ void stage4() {
   for (Player player : players) {
     player.displayBullets();
   }
-  // player.displayBullets();
 
   for (Alien alien : aliens) {
     alien.displayAlien();
-    //alien.alienShoot();
     alien.alienMove();
     alien.displayBullets();
     for (Player player : players) {
       if (alien.playerDetectHit(player)) {
         player.health--;
-        println("Hit");
       }
     }
   }
@@ -92,12 +88,11 @@ void stage4() {
   rules.calculateScore();
   rules.winLoseCondition();
 
-  if (alien.levelUp()) { //<>//
+  if (alien.levelUp()) {
     if (aliens.size() == 0) {
       for (Player player : players) {
         player.removeAllBullets();
-      }      
-      //player.removeAllBullets();
+      }       //<>//
       createFleet();
       for (Alien alien : aliens) {
         alien.moveSpeed *= 2;

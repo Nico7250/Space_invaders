@@ -39,7 +39,6 @@ public class Alien { //<>// //<>// //<>//
     }
   }
 
-
   void alienMove() {
     alienLocX += moveSpeed;
     alienLocY += moveSpeedY;
@@ -108,11 +107,6 @@ public class Alien { //<>// //<>// //<>//
   }
 }
 
-
-/* Functions below are all made for calculating the amount of aliens
- the screen can fit on the x and y-axis according to the alien sprites size
- and finaly a function for 'spawning' all the aliens
- */
 int getNumberAliensX() {
   int alienWidth = width/18;
   int avalibleSpaceX = width -2 *alienWidth;
@@ -129,7 +123,6 @@ int getNumberRows() {
 
   return numberRows;
 }
-
 
 int GetAlienToShoot() {
   if (frameCount % 75 == 0) { // Calculates delay between shots
@@ -149,7 +142,6 @@ void createAlien(int alienNumber, int rowNumber) {
   alien.alienLocX = alienX;
   aliens.add(alien);
 }
-
 
 void createFleet() {
   int numberAliensX = getNumberAliensX();

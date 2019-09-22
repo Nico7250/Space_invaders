@@ -1,16 +1,3 @@
-// Sets boolean variable for the different player actions (key)
-// The point of this, is to make it possible to click more than one button at once
-boolean player1Left;
-boolean player1Right;
-boolean player1Up;
-boolean player1Down;
-boolean player1Shoot;
-boolean player2Left;
-boolean player2Right;
-boolean player2Up;
-boolean player2Down;
-boolean player2Shoot;
-
 // Checks for key pressed and makes boolean variable true
 void keyPressed() {
   for (Player player : players) {

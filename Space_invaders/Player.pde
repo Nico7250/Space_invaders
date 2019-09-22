@@ -105,15 +105,14 @@ public class Player { //<>//
   }
   void removeAllBullets() { //<>//
     for (int i = bullets.size() -1; i >= 0; i--) {
-      //Bullet bullet = bullets.get(i);
       bullets.remove(i);
     }
   }
   // Deletes bullets when out of screen so that the game wont lagg as much and eventually crash
   void deleteBulletOutOfBound() {
     Iterator<Bullet> shoot = bullets.iterator();
-    while (shoot.hasNext()) { //<>//
-      Bullet b = shoot.next();
+    while (shoot.hasNext()) {
+      Bullet b = shoot.next(); //<>//
       if (b.position.y <=1) {
         shoot.remove();
       }
@@ -146,7 +145,6 @@ public class Player { //<>//
       Alien alien = aliens.get(i);
       float d = dist(position.x, position.y, alien.alienLocX, alien.alienLocY);
       if (d < 40 + 40) {
-        println("kaboom");
         health --;
       }
     }

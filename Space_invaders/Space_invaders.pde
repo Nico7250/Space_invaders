@@ -1,3 +1,4 @@
+// Uncomment for music
 //import processing.sound.*;
 import java.util.Iterator;
 
@@ -28,6 +29,7 @@ void setup() {
   rules = new Rules();
   createFleet();
   createStars();
+  // Uncomment for music
   /*mainMusic = new SoundFile(this, "../Resources/Space_Invaders.mp3");
    if (stage == 0){
    mainMusic.play();

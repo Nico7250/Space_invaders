@@ -1,5 +1,3 @@
-
-// Uses Player as parent, this is used for calculation of bullet spawn location
 public class Bullet {
   PImage playerBullet;
   PVector position;
