@@ -33,12 +33,12 @@ public class Rules {
         stage=7;
         player.removeAllBullets();
       }
-    }      
+    }
   }
 
   void powerUp() {
     if (frameCount % 78 == 0) {
-      fill(213,123, 76);
+      fill(213, 123, 76);
       ellipse(x, y, 8, 8);
       while (y < height) {
         y ++;

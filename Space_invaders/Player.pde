@@ -1,4 +1,4 @@
-public class Player {
+public class Player { //<>//
   boolean left;
   boolean right;
   boolean up;
@@ -23,7 +23,7 @@ public class Player {
   String bulletImage;
 
   // With the PImage as a input string, it is possible to make 2 players with different spaceships
-  Player(String playerImage, float x, float y,int px, int py, String bulletimage) {
+  Player(String playerImage, float x, float y, int px, int py, String bulletimage) {
 
     spaceShip = loadImage(playerImage);
     position = new PVector(x, y);
@@ -33,51 +33,50 @@ public class Player {
     scaley = py;
   }
 
-  void setActionKeys(int left, int right, int up, int down, int shoot)
-  {
+  void setActionKeys(int left, int right, int up, int down, int shoot) {
     akeyLeft = left;
     akeyRight = right;
     akeyUp = up;
     akeyDown = down;
     akeyShoot = shoot;
   }
-  
-  void pkeyReleased(int rKeycode) {
-  
-  if (rKeycode==akeyLeft) {
-    left = false;
-  }
-  if (rKeycode==akeyRight) {
-    right = false;
-  }
-  if (rKeycode==akeyUp) {
-    up = false;
-  }
-  if (rKeycode==akeyDown) {
-    down = false;
-  }
-  if (rKeycode==akeyShoot) {
-    shoot = false;
-  }
-}
 
- void pkeyPressed(int rKeycode) { //<>//
-  if (rKeycode==akeyLeft) {
-    left = true;
+  void pkeyReleased(int rKeycode) {
+
+    if (rKeycode==akeyLeft) {
+      left = false;
+    }
+    if (rKeycode==akeyRight) {
+      right = false;
+    }
+    if (rKeycode==akeyUp) {
+      up = false;
+    }
+    if (rKeycode==akeyDown) {
+      down = false;
+    }
+    if (rKeycode==akeyShoot) {
+      shoot = false;
+    }
   }
-  if (rKeycode==akeyRight) {
-    right = true;
+
+  void pkeyPressed(int rKeycode) {
+    if (rKeycode==akeyLeft) {
+      left = true;
+    }
+    if (rKeycode==akeyRight) {
+      right = true;
+    }
+    if (rKeycode==akeyUp) {
+      up = true;
+    }
+    if (rKeycode==akeyDown) {
+      down = true;
+    }
+    if (rKeycode==akeyShoot) {
+      shoot = true;
+    }
   }
-  if (rKeycode==akeyUp) {
-    up = true;
-  }
-  if (rKeycode==akeyDown) {
-    down = true;
-  }
-  if (rKeycode==akeyShoot) {
-    shoot = true;
-  }
-}
   // Moves spaceship on the x and y-axis, also possible to move diagonally
   void movePlayer() {
     if (left) {
@@ -103,8 +102,8 @@ public class Player {
       bullet.displayBullet();
       bullet.move();
     }
-  } //<>//
-  void removeAllBullets() {
+  }
+  void removeAllBullets() { //<>//
     for (int i = bullets.size() -1; i >= 0; i--) {
       //Bullet bullet = bullets.get(i);
       bullets.remove(i);
@@ -112,8 +111,8 @@ public class Player {
   }
   // Deletes bullets when out of screen so that the game wont lagg as much and eventually crash
   void deleteBulletOutOfBound() {
-    Iterator<Bullet> shoot = bullets.iterator(); //<>//
-    while (shoot.hasNext()) {
+    Iterator<Bullet> shoot = bullets.iterator();
+    while (shoot.hasNext()) { //<>//
       Bullet b = shoot.next();
       if (b.position.y <=1) {
         shoot.remove();
@@ -134,7 +133,7 @@ public class Player {
     position.x = constrain(position.x, 60, width-60);
     position.y = constrain(position.y, height-height/6, height-60);
   }
- 
+
   // Displays player
   void displayPlayer() {
     imageMode(CENTER);
@@ -147,7 +146,6 @@ public class Player {
       Alien alien = aliens.get(i);
       float d = dist(position.x, position.y, alien.alienLocX, alien.alienLocY);
       if (d < 40 + 40) {
-        //aliens.remove(i);
         println("kaboom");
         health --;
       }

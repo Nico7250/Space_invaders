@@ -1,4 +1,4 @@
-int buttonSizeX = 250;
+int buttonSizeX = 250; //<>//
 int buttonSizeY = 100;
 PImage player1;
 
@@ -63,15 +63,15 @@ void stage4() {
     alien.alienMove();
     alien.displayBullets();
     for (Player player : players) {
-      if (alien.playerDetectHit(player)){
+      if (alien.playerDetectHit(player)) {
         player.health--;
         println("Hit");
       }
     }
   }
   int alientoshoot = GetAlienToShoot();
-  if(alientoshoot>-1)
-    aliens.get(alientoshoot).alienShoot(); //<>//
+  if (alientoshoot>-1)
+    aliens.get(alientoshoot).alienShoot();
   text("Score:" + rules.score1, width/10, height/10);
   textAlign(CENTER);
   textSize(32);
@@ -83,7 +83,7 @@ void stage4() {
     player.playerConstrain();
 
     player.deleteBulletOutOfBound();
-    if(alien.playerDetectHit(player))
+    if (alien.playerDetectHit(player))
       player.health--;
     alien.bulletDetectHit(player.bullets);
     player.playerHit();
