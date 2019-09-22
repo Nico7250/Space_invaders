@@ -52,11 +52,7 @@ void stage3() {
 
 void stage4() {
   createBackground();
-
-  for (Bullet bullet : bullets) {
-    bullet.displayBullet();
-    bullet.move();
-  }
+  player.displayBullets();
 
   for (Alien alien : aliens) {
     alien.displayAlien();
@@ -73,16 +69,17 @@ void stage4() {
   player.movePlayer(player1Left, player1Right, player1Up, player1Down, player1Shoot);
   player.playerConstrain();
 
-  bullet.deleteBulletOutOfBound();
-  alien.bulletDetectHit();
+  player.deleteBulletOutOfBound();
+  alien.bulletDetectHit(player.bullets);
   player.playerHit();
 
+  rules.powerUp();
   rules.calculateScore();
   rules.winLoseCondition();
 
   if (alien.levelUp()) {
     if (aliens.size() == 0) {
-      bullet.removeAll();
+      player.removeAllBullets();
       createFleet();
       for (Alien alien : aliens) {
         alien.moveSpeed *= 2;
@@ -96,10 +93,8 @@ void stage4() {
 void stage5() {
   createBackground();
 
-  for (Bullet bullet : bullets) {
-    bullet.displayBullet();
-    bullet.move();
-  }
+  player.displayBullets();
+  player2.displayBullets();
 
   for (Alien alien : aliens) {
     alien.displayAlien();
@@ -118,8 +113,10 @@ void stage5() {
   player2.displayPlayer2();
   player2.movePlayer(player2Left, player2Right, player2Up, player2Down, player2Shoot);
 
-  bullet.deleteBulletOutOfBound();
-  alien.bulletDetectHit();
+  player.deleteBulletOutOfBound();
+  player2.deleteBulletOutOfBound();
+  alien.bulletDetectHit(player.bullets);
+  alien.bulletDetectHit(player2.bullets);
   player.playerHit();
   player2.playerHit();
 
@@ -129,7 +126,8 @@ void stage5() {
 
   if (alien.levelUp()) {
     if (aliens.size() == 0) {
-      bullet.removeAll();
+      player.removeAllBullets();
+      player2.removeAllBullets();
       createFleet();
       for (Alien alien : aliens) {
         alien.moveSpeed *= 2;
@@ -145,12 +143,11 @@ void stage6() {
   image(win, width / 2, height /2);
 }
 
-void stage7(){
+void stage7() {
   PImage lose;
   createMenuBackground();
   lose = loadImage("../Resources/youLose.png");
   image(lose, width/2, height /2);
-  
 }
 
 

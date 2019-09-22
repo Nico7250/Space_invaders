@@ -1,18 +1,22 @@
 public class Player {
   PImage spaceShip;
   PImage spaceShip2;
-  public PVector position;
-  int shipMoveSpeed;
-  int health;
+  PVector position;
+  int shipMoveSpeed = 5;
+  int health = 3;
+  ArrayList <Bullet> bullets;
+  long bulletTimer; // Used in calculation for bullet delay
+  int bulletDelay = 250; // The delay between shots
+  String bulletImage;
 
   // With the PImage as a input string, it is possible to make 2 players with different spaceships
-  Player(String playerImage, float x, float y) {
+  Player(String playerImage, float x, float y, String bulletimage) {
 
     spaceShip = loadImage(playerImage);
     spaceShip2 = loadImage(playerImage);
     position = new PVector(x, y);
-    shipMoveSpeed = 5;
-    health = 3;
+    bullets = new ArrayList<Bullet>();
+    bulletImage = bulletimage;
   }
 
   // Moves spaceship on the x and y-axis, also possible to move diagonally
@@ -29,8 +33,40 @@ public class Player {
     if (down) {
       position.y += shipMoveSpeed;
     }
-    if (shoot){
-      bullet.shoot(position.x, position.y);
+    if (shoot) {
+      shoot(position.x, position.y);
+    }
+  }
+
+  void displayBullets()
+  {
+    for (Bullet bullet : bullets) {
+      bullet.displayBullet();
+      bullet.move();
+    }
+  }
+  void removeAllBullets() {
+    for (int i = bullets.size() -1; i >= 0; i--) {
+      //Bullet bullet = bullets.get(i);
+      bullets.remove(i);
+    }
+  }
+  // Deletes bullets when out of screen so that the game wont lagg as much and eventually crash
+  void deleteBulletOutOfBound() {
+    Iterator<Bullet> shoot = bullets.iterator();
+    while (shoot.hasNext()) {
+      Bullet b = shoot.next();
+      if (b.position.y <=200) {
+        shoot.remove();
+      }
+    }
+  }
+
+  void shoot(float x, float y) {
+    if (millis() - bulletTimer >= bulletDelay) { // Calculates delay between shots
+      bulletTimer = millis();
+      Bullet bullet = new Bullet(x, y-35, 3, bulletImage); // Spawns bullet at spaceShip location
+      bullets.add(bullet);
     }
   }
 

@@ -21,14 +21,14 @@ public class Rules {
   }
 
   void winLoseCondition() {
-    if (score1 >= 1000) {
+    if (score1 >= 10000) {
       stage = 6;
       rules.score1 = 0;
       alien.removeAll();
-    } if (player.health == 0 || player2.health == 0){
+    } 
+    if (player.health == 0 || player2.health == 0) {
       alien.removeAll();
       stage = 7;
-      
     }
   }
 
@@ -36,7 +36,7 @@ public class Rules {
     if (frameCount % 78 == 0) {
       ellipse(x, y, 8, 8);
       while (y < height) {
-        y --;
+        y ++;
       }
     }
   }

@@ -5,7 +5,7 @@ import java.util.Iterator;
 Alien alien;
 Player player;
 Player player2;
-Bullet bullet;
+//Bullet bullet;
 Rules rules;
 
 int stage = 0;
@@ -16,7 +16,7 @@ float[] stars2 = new float[1000];
 float[] stars3 = new float [1000];
 
 ArrayList <Alien> aliens;
-ArrayList <Bullet> bullets;
+//ArrayList <Bullet> bullets;
 //ArrayList <Bullet> bulletsPlayer2;
 
 
@@ -25,12 +25,12 @@ void setup() {
   frameRate(60);
 
   aliens = new ArrayList<Alien>();
-  bullets = new ArrayList<Bullet>();
+  //bullets = new ArrayList<Bullet>();
   //bulletsPlayer2 = new ArrayList<Bullet>();
 
-  player = new Player("../Resources/spaceShip.png", width/2, height);
-  player2 = new Player("../Resources/spaceShip2.png", width/4, height);
-  bullet = new Bullet(player.position.x, player.position.y);
+  player = new Player("../Resources/spaceShip.png", width/2, height, null);
+  player2 = new Player("../Resources/spaceShip2.png", width/4, height, null);
+  //bullet = new Bullet(player.position.x, player.position.y);
   rules = new Rules();
   createFleet();
   createStars();
@@ -57,9 +57,9 @@ void draw() {
     stage4();
   } else if (stage == 5) {
     stage5();
-  } else if (stage == 6){
+  } else if (stage == 6) {
     stage6();
-  } else if (stage == 7){
+  } else if (stage == 7) {
     stage7();
   }
 }
