@@ -132,7 +132,6 @@ public class Player { //<>//
     position.y = constrain(position.y, height-height/6, height-60);
   }
 
-  // Displays player
   void displayPlayer() {
     imageMode(CENTER);
     spaceShip.resize(scaleX, scaleY);

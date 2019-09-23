@@ -1,6 +1,5 @@
 int buttonSizeX = 250; //<>//
 int buttonSizeY = 100;
-//PImage player1;
 
 void stage0() {
   createMenuBackground();
