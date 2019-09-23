@@ -9,17 +9,16 @@ public class Player { //<>//
   int akeyUp;
   int akeyDown;
   int akeyShoot;
-  int scalex;
-  int scaley;
-  PImage spaceShip;
-  PImage spaceShip2;
-  PVector position;
+  int scaleX;
+  int scaleY;
   int shipMoveSpeed = 5;
   int score = 0;
   int health = 3;
-  ArrayList <Bullet> bullets;
-  long bulletTimer; // Used in calculation for bullet delay
   int bulletDelay = 250; // The delay between shots
+  long bulletTimer; // Used in calculation for bullet delay
+  PImage spaceShip;
+  PVector position;
+  ArrayList <Bullet> bullets;
   String bulletImage;
 
   // With the PImage as a input string, it is possible to make 2 players with different spaceships
@@ -29,8 +28,8 @@ public class Player { //<>//
     position = new PVector(x, y);
     bullets = new ArrayList<Bullet>();
     bulletImage = bulletimage;
-    scalex = px;
-    scaley = py;
+    scaleX = px;
+    scaleY = py;
   }
 
   void setActionKeys(int left, int right, int up, int down, int shoot) {
@@ -136,14 +135,14 @@ public class Player { //<>//
   // Displays player
   void displayPlayer() {
     imageMode(CENTER);
-    spaceShip.resize(scalex, scaley);
+    spaceShip.resize(scaleX, scaleY);
     image(spaceShip, position.x, position.y);
   }
 
   void playerHit() {
     for (int i = aliens.size() - 1; i >=0; i--) {
       Alien alien = aliens.get(i);
-      float d = dist(position.x, position.y, alien.alienLocX, alien.alienLocY);
+      float d = dist(position.x, position.y, alien.position.x, alien.position.y);
       if (d < 40 + 40) {
         health --;
       }

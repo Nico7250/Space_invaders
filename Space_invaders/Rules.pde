@@ -1,27 +1,22 @@
 public class Rules {
-  int score1;
-  int score2;
-  int highScore;
-  float x;
-  float y;
+  int score;
 
   Rules() {
-    score1 = 0;
-    score2 = 0;
-    x = -height;
-    y = random(width);
+    score = 0;
   }
 
   void calculateScore() {
-    score1 += millis()/60/60;
+    score += millis()/60/60;
   }
 
   void winLoseCondition() {
-    if (score1 >= 50000) {
+    // Win condition
+    if (score >= 50000) {
       stage = 6;
-      rules.score1 = 0;
+      rules.score = 0;
       alien.removeAll();
     } 
+    // Lose condition
     for (Player player : players) {
       if (player.health==0)
       {

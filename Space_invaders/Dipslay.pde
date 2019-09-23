@@ -68,7 +68,7 @@ void stage4() {
   int alientoshoot = GetAlienToShoot();
   if (alientoshoot>-1)
     aliens.get(alientoshoot).alienShoot();
-  text("Score:" + rules.score1, width/10, height/10);
+  text("Score:" + rules.score, width/10, height/10);
   textAlign(CENTER);
   textSize(32);
   text(frameRate, width/1.05, height/1.03);
@@ -81,7 +81,7 @@ void stage4() {
     player.deleteBulletOutOfBound();
     if (alien.playerDetectHit(player))
       player.health--;
-    alien.bulletDetectHit(player.bullets);
+    alien.alienDetectHit(player.bullets);
     player.playerHit();
   }
 

@@ -1,27 +1,21 @@
-public class Alien { //<>// //<>// //<>//
-  PImage alien;
-  public float alienLocX;
-  public float alienLocY;
+public class Alien { //<>//
   float moveSpeedY;
   float moveSpeed;
-  float moveSpeed2;
-  float moveSpeed3;
+  PImage alien;
   ArrayList <Bullet> alienBullets;
+  PVector position;
   Alien(float x, float y) {
     alien = loadImage("../Resources/alien.png");
-    alienLocX = x;
-    alienLocY = y;
+    position = new PVector(x, y);
     moveSpeedY = 0;
     moveSpeed = 1.5;
-    moveSpeed2 = 3.5;
-    moveSpeed3 = 7.5;
     alienBullets = new ArrayList<Bullet>();
   }
 
   void displayAlien() {
     imageMode(CENTER);
     alien.resize(100, 50);
-    image(alien, alienLocX, alienLocY);
+    image(alien, position.x, position.y);
   }
 
   // Increses movement speeed of all aliens (used for speeding up all aliens when one is killed
@@ -40,27 +34,27 @@ public class Alien { //<>// //<>// //<>//
   }
 
   void alienMove() {
-    alienLocX += moveSpeed;
-    alienLocY += moveSpeedY;
+    position.x += moveSpeed;
+    position.y += moveSpeedY;
 
-    if (alienLocX < 50) {
+    if (position.x < 50) {
       for (Alien alien : aliens) {
-        alien.alienLocY += 25; // Moves all aliens a row down when boarder is hit
-        alienLocX = 50;
+        alien.position.y += 25; // Moves all aliens a row down when boarder is hit
+        position.x = 50;
         alien.moveSpeed *= -1;
       }
     }
-    if (alienLocX > width-50) {
+    if (position.x > width-50) {
       for (Alien alien : aliens) {
-        alien.alienLocY += 25; // Moves all aliens a row down when boarder is hit
-        alienLocX = width - 50;
+        alien.position.y += 25; // Moves all aliens a row down when boarder is hit
+        position.x = width - 50;
         alien.moveSpeed *= -1;
       }
     }
   }
 
   void alienShoot() {
-    Bullet bullet = new Bullet(alienLocX, alienLocY+10, -5, "../Resources/bullet2.png"); // Spawns bullet at spaceShip location
+    Bullet bullet = new Bullet(position.x, position.y+10, -5, "../Resources/bullet2.png"); // Spawns bullet at spaceShip location
     alienBullets.add(bullet);
   }
 
@@ -83,16 +77,16 @@ public class Alien { //<>// //<>// //<>//
     return false;
   }
   // Detects collision between alien and player shot
-  void bulletDetectHit(ArrayList <Bullet> bullets) {
+  void alienDetectHit(ArrayList <Bullet> bullets) {
     for (int i = bullets.size() -1; i >= 0; i--) { // Using a decrementing loop / counting backwards to -
       Bullet bullet = bullets.get(i);              // - avoid infinity loop due to how arrayList works
       for (int j = aliens.size() -1; j >= 0; j--) {
         Alien alien = aliens.get(j);
-        float d = dist(alien.alienLocX, alien.alienLocY, bullet.position.x, bullet.position.y);
+        float d = dist(alien.position.x, alien.position.y, bullet.position.x, bullet.position.y);
         if (d < 20 + 20) {
           bullets.remove(i);
           aliens.remove(j);
-          rules.score1 += 100; // Increses score everytime an alien is killed
+          rules.score += 100; // Increses score everytime an alien is killed
           alien.moveSpeedUp(); // Increses the movement speed of all aliens when alien is killed
         }
       }
@@ -138,8 +132,8 @@ void createAlien(int alienNumber, int rowNumber) {
   alien = new Alien(0, 50);
   int alienX = alienWidth + 2 * alienWidth * alienNumber;
   int alienY = alienHeight +2 * alienHeight * rowNumber;
-  alien.alienLocY = alienY;
-  alien.alienLocX = alienX;
+  alien.position.y = alienY;
+  alien.position.x = alienX;
   aliens.add(alien);
 }
 
